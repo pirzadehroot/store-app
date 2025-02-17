@@ -10,8 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      
       fontFamily: {
-        vazir: "Vazir",
+        yekan: "Yekan",
       },
       colors: {
         gray: {

@@ -10,7 +10,7 @@ import ToTop from "./ToTop";
 export default function Footer() {
   return (
     <footer className="bg-gray-55 dark:bg-gray-925 dark:text-gray-100 border-t dark:border-gray-750 !duration-300">
-      <div className="mb-16">
+      <div className="max-sm:mb-16">
         <Container>
           <ToTop />
           <FooterMeno />

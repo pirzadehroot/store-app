@@ -104,11 +104,11 @@ export default function HeaderCategory() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative bg-opacity-50 transition-opacity duration-300">
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="flex cursor-pointer items-center py-2.5 hover:text-gray-700  dark:hover:text-white transition-colors"
+        className="flex cursor-pointer  items-center py-2.5 hover:text-gray-700  dark:hover:text-white transition-colors"
       >
         <BiSolidCategory
           size={25}

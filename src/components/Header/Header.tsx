@@ -12,7 +12,7 @@ import MobileMenu from "./mobile/MobileMenu";
 export default function Header() {
   return (
     <header id={"top"}>
-      <section className="max-lg:visible lg:hidden">
+      <section className="sticky  max-lg:visible lg:hidden  shadow-md">
         <Container>
           <div className="flex items-center justify-between h-16">
             <MobileMenu />
@@ -30,9 +30,9 @@ export default function Header() {
             </div>
             <div className="flex items-center max-lg:hidden">
               <ThemeToggle />
-              <span className="border-l-2 mx-4 w-1 h-1/3  dark:border-gray-400"></span>
+              <span className="border-l mx-3 h-1/3 dark:border-gray-400"></span>
               <HeaderLogin />
-              <span className="border-l-2 mx-4 w-1 h-1/3  dark:border-gray-400"></span>
+              <span className="border-l mx-3 h-1/3 dark:border-gray-400"></span>
               <CartIcon />
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function Header() {
           <div className="flex justify-between">
             <div className="flex justify-start items-center">
               <HeaderCategory />
-              <span className="border-l-2 mx-3 w-1 h-1/3 dark:border-gray-400"></span>
+              <span className="border-l mx-3 h-1/3 dark:border-gray-400"></span>
               <Nav />
             </div>
             <HeaderContactUs />

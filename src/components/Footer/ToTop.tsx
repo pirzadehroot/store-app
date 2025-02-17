@@ -18,7 +18,7 @@ export default function ToTop() {
         className="max-lg:visible lg:hidden fixed left-3 bottom-20  z-50 border-2 border-red-500 p-0.5  rounded-xl active:scale-110 transition-transform"
       >
         <FaChevronUp
-          className="text-white dark:text-gray-925 bg-red-500 p-2 rounded-xl border-2 border-gray-200 dark:border-gray-925"
+          className="text-white bg-red-500 p-2 rounded-xl border-2 border-gray-200 dark:border-gray-925"
           size={35}
         />
       </a>

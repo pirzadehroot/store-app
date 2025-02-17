@@ -32,12 +32,12 @@ const ThemeToggle = () => {
       {isDarkMode ? (
         <MdOutlineLightMode
           className=" hover:text-gray-400 transform transition-transform duration-500 hover:rotate-180"
-          size={30}
+          size={28}
         />
       ) : (
         <FaRegMoon
-          className=" hover:text-gray-400 transform transition-transform duration-500 hover:-rotate-45"
-          size={30}
+          className=" hover:text-gray-400 transform transition-transform duration-500 hover:-rotate-12"
+          size={27}
         />
       )}
     </div>

@@ -14,17 +14,14 @@ export default function MobileMenu() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 rounded-md  dark:text-gray-100 text-gray-800"
+        className="p-2  dark:text-gray-100 text-gray-800"
       >
         {isOpen ? (
-          <HiXMark
-            size={32}
-            className="text-gray-500 dark:bg-gray-800 dark:text-white"
-          />
+          <HiXMark size={40} className="text-gray-500 dark:text-white" />
         ) : (
           <HiBars3BottomRight
-            className="text-gray-500 dark:bg-gray-800 dark:text-white"
-            size={32}
+            className="text-gray-500 dark:text-white"
+            size={40}
           />
         )}
       </button>
