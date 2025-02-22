@@ -1,7 +1,7 @@
-import { LuPhoneCall } from "react-icons/lu";
 import ToPersianNumber from "../../../utils/ToPersianNumber";
 import Link from "next/link";
-import { HiOutlinePhone } from "react-icons/hi2";
+import contactIcon from "@/../public/images/headerIcons/contact.svg";
+import Image from "next/image";
 
 export default function HeaderContactUs() {
   return (
@@ -12,13 +12,24 @@ export default function HeaderContactUs() {
           <ToPersianNumber number={21} />
           <ToPersianNumber number={0} />
         </span>
-        <LuPhoneCall
-          size={35}
-          className="text-gray-500 dark:bg-gray-700 dark:text-white bg-white shadow-sm p-1 py-2 rounded-full"
+        <Image
+          className="text-gray-500 dark:bg-gray-700 dark:text-white bg-white p-1 rounded-full"
+          priority
+          src={contactIcon}
+          alt={"homeIcon"}
+          width={28}
+          height={28}
         />
       </span>
       <Link href={"tel:43625743"} className={"sm:hidden max-sm:visible mx-2"}>
-        <HiOutlinePhone size={28} className="text-gray-500 dark:text-white" />
+        <Image
+          className="text-gray-500 dark:text-white"
+          priority
+          src={contactIcon}
+          alt={"homeIcon"}
+          width={28}
+          height={28}
+        />
       </Link>
     </div>
   );

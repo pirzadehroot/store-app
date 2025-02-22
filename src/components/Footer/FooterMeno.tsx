@@ -43,7 +43,7 @@ const FooterMenu = () => {
   ];
 
   return (
-    <div className="py-10 grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:justify-items-center max-sm:text-center items-center gap-10">
+    <div className="py-10 grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:justify-items-center max-sm:text-center items-start gap-10">
       {menuItems.map((item, index) => (
         <div key={index} className="w-full">
           <button

@@ -13,7 +13,7 @@ export default function PageRouter({ routerList }: IRouterType[]) {
         <LuHouse size={20} className="dark:text-gray-110 text-gray-400" />
       </Link>
       {routerList &&
-        routerList.map((route, index) => (
+        routerList.map((route: IRouterType, index: string) => (
           <div className={"items-center"} key={index}>
             <span className="dark:text-gray-110 text-gray-400 text-sm mx-3">
               /

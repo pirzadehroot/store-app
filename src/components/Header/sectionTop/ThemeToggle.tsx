@@ -1,43 +1,45 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaRegMoon } from "react-icons/fa";
-import { MdOutlineLightMode } from "react-icons/md";
+import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
     }
-  }, []);
+    return false;
+  });
 
   useEffect(() => {
+    const htmlElement = document.documentElement;
     if (isDarkMode) {
+      htmlElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
     } else {
+      htmlElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
   return (
     <div
-      onClick={() => setIsDarkMode(!isDarkMode)}
-      className="hover:cursor-pointer dark:text-white  text-gray-500 hover:text-gray-400 transition-colors"
+      onClick={() => setIsDarkMode((prev) => !prev)}
+      className="cursor-pointer dark:text-white text-gray-500 hover:text-gray-400 transition-colors"
+      aria-label="Toggle dark mode"
     >
       {isDarkMode ? (
-        <MdOutlineLightMode
-          className=" hover:text-gray-400 transform transition-transform duration-500 hover:rotate-180"
-          size={28}
+        <HiOutlineSun
+          className="hover:text-gray-400 transform transition-transform duration-500 hover:rotate-180"
+          size={30}
         />
       ) : (
-        <FaRegMoon
-          className=" hover:text-gray-400 transform transition-transform duration-500 hover:-rotate-12"
-          size={27}
+        <HiOutlineMoon
+          className="hover:text-gray-400 transform transition-transform duration-500 hover:-rotate-12"
+          size={30}
         />
       )}
     </div>

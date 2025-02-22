@@ -2,11 +2,11 @@
 
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import { BiSolidCategory } from "react-icons/bi";
 import { GrTechnology } from "react-icons/gr";
 import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
 import image_src from "../../../../public/images/headerCategory/mega-banner-1.png";
+import CategoryIcon from "@/../public/images/headerIcons/Category-header.svg";
 
 const categories = [
   {
@@ -92,7 +92,7 @@ export default function HeaderCategory() {
     );
     menuTimeout.current = setTimeout(() => {
       setMenuOpen(false);
-    }, 500);
+    }, 300);
   }, []);
 
   const handleCategoryEnter = useCallback((index: number) => {
@@ -104,17 +104,21 @@ export default function HeaderCategory() {
   }, []);
 
   return (
-    <div className="relative bg-opacity-50 transition-opacity duration-300">
+    <div className="relative">
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="flex cursor-pointer  items-center py-2.5 hover:text-gray-700  dark:hover:text-white transition-colors"
+        className="flex cursor-pointer items-center py-2.5 hover:text-gray-700  dark:hover:text-white transition-colors"
       >
-        <BiSolidCategory
-          size={25}
-          className="ml-2 text-gray-500 hover:text-gray-100 dark:text-gray-100"
+        <Image
+          className="text-gray-500 ml-2 dark:text-white"
+          priority
+          src={CategoryIcon}
+          alt={"category-icon"}
+          width={22}
+          height={22}
         />
-        <span className="text-gray-600 font-medium dark:text-gray-100">
+        <span className="text-gray-500 text-sm dark:text-gray-100">
           دسته‌بندی کالا‌ها
         </span>
       </div>
@@ -122,7 +126,7 @@ export default function HeaderCategory() {
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className={`absolute right-0 rounded-b-xl shadow-xl bg-white border border-gray-200 dark:bg-gray-750 dark:border-gray-700 dark:text-gray-100 w-60 z-10 transition-all duration-300 ${
+        className={`absolute right-0 rounded-b-xl text-sm shadow-xl bg-white border border-gray-200 dark:bg-gray-750 dark:border-gray-700 dark:text-gray-100 w-60 z-10 transition-all duration-300 ${
           anime_revers != "" ? anime_revers.toString : ""
         } ${
           isMenuOpen
@@ -144,7 +148,7 @@ export default function HeaderCategory() {
               >
                 <div className="flex items-center">
                   {category.icon}
-                  <span>{category.title}</span>
+                  <span className="text-sm">{category.title}</span>
                 </div>
                 <FaAngleLeft
                   size={16}
@@ -157,7 +161,7 @@ export default function HeaderCategory() {
                   <div className="ml-4 w-full grid grid-cols-3">
                     {category.subcategories.map((subcategory, idx) => (
                       <div key={idx}>
-                        <h3 className="font-semibold text-gray-700 dark:text-gray-55 mb-2 mt-2 border-r-2 pr-2 border-red-500">
+                        <h3 className="text-base text-gray-700 dark:text-gray-55 mb-2 mt-2 border-r-2 pr-2 border-red-500">
                           {subcategory.title}
                         </h3>
                         <ul className="space-y-2">

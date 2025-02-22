@@ -1,9 +1,6 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import Select from "react-select";
-import imageProduct from "../../../../public/images/product/vscode-bg.webp";
 import { LuSearch } from "react-icons/lu";
 
 const options = [
@@ -19,6 +16,7 @@ export default function SearchBox() {
       <div className="flex items-center">
         <div className="w-36 z-50">
           <Select
+            instanceId="search-select" // اضافه کردن این خط
             options={options}
             defaultValue={options[0]}
             className="w-full"
@@ -61,7 +59,7 @@ export default function SearchBox() {
         </div>
 
         {/* Search Box */}
-        <div className="border rounded-xl flex bg-gray-100 dark:bg-gray-850 dark:border-gray-500 items-center p-2 pr-6 flex-1 -mr-5 ml-2">
+        <div className="border rounded-xl flex bg-gray-55 dark:bg-gray-850 dark:border-gray-500 items-center p-2 pr-6 flex-1 -mr-5 ml-2">
           <input
             type="text"
             placeholder="جستجو در محصولات و کالا ها ..."
@@ -70,34 +68,6 @@ export default function SearchBox() {
           <LuSearch size={25} className="text-gray-500 cursor-pointer" />
         </div>
       </div>
-
-      {/* Search Results */}
-      {/* <div className="mt-4 hidden bg-white z-30 border border-gray-300 rounded-b-lg absolute">
-        <ul>
-          <li>
-            <Link href="/" className="flex items-center space-x-4">
-              <Image
-                src={imageProduct}
-                alt="Product Image"
-                width={100}
-                height={70}
-                className="rounded"
-              />
-              <div>
-                <h5 className="text-sm font-medium">نام محصول</h5>
-                <div className="flex items-center space-x-2">
-                  <span className="text-red-500 font-semibold text-sm">
-                    2,000,000 تومان
-                  </span>
-                  <span className="text-gray-300 font-semibold text-sm line-through">
-                    4,000,000 تومان
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </li>
-        </ul>
-      </div> */}
     </div>
   );
 }

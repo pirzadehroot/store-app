@@ -10,7 +10,6 @@ export default {
   ],
   theme: {
     extend: {
-      
       fontFamily: {
         yekan: "Yekan",
       },

@@ -1,10 +1,6 @@
 import CartItem from "../../components/Cart/CartItem";
 import Container from "../../components/Container";
-<<<<<<< HEAD
 import { useCartContext } from "../../context/useCartContext";
-=======
-import { useCartContext } from "../../context/CartContext";
->>>>>>> 398085c08ae3d2dbfc2cdbe44507f85042665d6a
 
 export default function Cart() {
   const { ShowCart } = useCartContext();

@@ -9,6 +9,10 @@
   }
 }
 
+body {
+    font-variant-numeric: persian;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 4px;
@@ -25,7 +29,20 @@
   border-radius: 5px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* برای فایرفاکس */
+}
+
+/* about page */
+.bg_contact-img {
+  background: url("../../public/images/Contact/contact-header.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

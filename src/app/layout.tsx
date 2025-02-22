@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="rtl" className="dark scroll-smooth overflow-y-auto">
-      <body className="font-yekan text-right dark:bg-gray-925 bg-white !text-gray-850 dark:!text-gray-100 !duration-300">
+    <html lang="fa" dir="rtl" className="dark scroll-smooth">
+      <body className="font-yekan text-right dark:bg-gray-925 bg-white !text-gray-850 dark:!text-gray-100 !duration-300 ">
         <MainLayout>{children}</MainLayout>
       </body>
     </html>
