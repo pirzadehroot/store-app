@@ -24,6 +24,22 @@ export default function AdminNavBar() {
         <li>
           <Link
             className="bg-blue-500 rounded-md shadow-lg p-2 text-white"
+            href={"/admin/article"}
+          >
+            مدریت محصولات
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="bg-blue-500 rounded-md shadow-lg p-2 text-white"
+            href={"/admin/"}
+          >
+            مدریت محصولات
+          </Link>
+        </li>
+        <li>
+          <Link
+            className="bg-blue-500 rounded-md shadow-lg p-2 text-white"
             href={"/admin/user"}
           >
             مدیریت کاربران

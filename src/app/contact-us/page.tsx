@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import ContactForm from "../../components/Contacts/ContactForm";
 import ContactMap from "../../components/Contacts/ContactMap";
 import Container from "../../components/Container";
+
+export const metadata: Metadata = {
+  title: "تماس با ما",
+  description: "صفحه تماس با ما",
+};
 
 export default function Contact() {
   return (

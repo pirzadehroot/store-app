@@ -3,8 +3,8 @@ import "./globals.css";
 import MainLayout from "../components/MainLayout";
 
 export const metadata: Metadata = {
-  title: "App",
-  description: "Base App",
+  title: "فروشگاه آنلاین",
+  description: "فروشگاه base",
 };
 
 export default function RootLayout({

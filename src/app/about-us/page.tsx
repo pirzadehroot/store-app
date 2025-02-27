@@ -3,6 +3,12 @@ import Container from "../../components/Container";
 import Image from "next/image";
 import back_img from "@/../public/images/about/121278.jpg";
 import AboutCommentSlider from "../../components/About/AboutCommentSlider";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "درباره ما",
+  description: "صفحه درباره ما",
+};
 
 export default function About() {
   return (

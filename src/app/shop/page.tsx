@@ -1,13 +1,19 @@
 import Link from "next/link";
-import Container from "../../components/Container";
+import type { Metadata } from "next";
+import axios from "axios";
 import ProductItem, {
   IProductType,
 } from "../../components/Product/ProductItem";
-import axios from "axios";
 import ShopFilter from "../../components/Shop/PrroductTopFilter";
 import ProductFilter from "../../components/Shop/ProductFilter";
+import Container from "../../components/Container";
 import ShopPagination from "../../components/Shop/ShopPagination";
 import PageRouter from "../../components/Router/PageRouter";
+
+export const metadata: Metadata = {
+  title: "محصولات",
+  description: "صفحه محصولات فروشگاه",
+};
 
 export default async function Shop() {
   const data = await axios.get("http://localhost:8001/products");
@@ -33,7 +39,7 @@ export default async function Shop() {
           <div className="grid grid-cols-4 gap-10 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1">
             {products &&
               products.map((product, index) => (
-                <Link href={`shop/${product.id}`} key={index}>
+                <Link href={`shop/${product.slug}`} key={index}>
                   <ProductItem {...product} />
                 </Link>
               ))}

@@ -3,7 +3,7 @@ import Image from "next/image";
 import ToPersianNumber from "../../utils/ToPersianNumber";
 
 export interface IProductType {
-  id: string;
+  id: number;
   image: string;
   title: string;
   rating: number;

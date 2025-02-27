@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import AddRemoveProduct from "./AddRemoveProduct";
-import { HiStar } from "react-icons/hi2";
 import { IProductType } from "../Product/ProductItem";
 
 export default function CartItem(item: IProductType) {
@@ -17,20 +16,13 @@ export default function CartItem(item: IProductType) {
         />
         <div>
           <h2 className="text-lg mb-5">{item.title}</h2>
-          <span className="flex">
-            {Array.from({ length: item.rating || 0 }, (_, index) => (
-              <span key={index}>
-                <HiStar size={20} className="text-yellow-500" />
-              </span>
-            ))}
-          </span>
         </div>
       </div>
       <div className="flex items-center gap-5">
         <span className="text-lg font-bold text-red-600">
           تومان {item.price}
         </span>
-        <AddRemoveProduct id={item.id} />
+        <AddRemoveProduct item={item} />
       </div>
     </div>
   );

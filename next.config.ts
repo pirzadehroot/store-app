@@ -1,9 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   images: {
-    domains: ["exo.ir"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "exo.ir",
+      },
+      {
+        protocol: "https",
+        hostname: "pre-websites.ir",
+      },
+    ],
   },
 };
 
