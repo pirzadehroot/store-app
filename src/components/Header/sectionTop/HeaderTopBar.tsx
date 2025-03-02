@@ -1,4 +1,3 @@
-import Container from "../../Container";
 import CartIcon from "./CartIcon";
 import HeaderLogin from "./HeaderLogin";
 import Logo from "./Logo";
@@ -8,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 export default function HeaderTopBar() {
   return (
     <section className="relative z-10 max-lg:hidden bg-white dark:bg-gray-925">
-      <Container>
+      <div className="container mx-auto">
         <div className="flex justify-between h-18">
           <div className="flex items-center justify-between">
             <Logo />
@@ -22,7 +21,7 @@ export default function HeaderTopBar() {
             <CartIcon />
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -6,7 +6,6 @@ import ProductItem, {
 } from "../../components/Product/ProductItem";
 import ShopFilter from "../../components/Shop/PrroductTopFilter";
 import ProductFilter from "../../components/Shop/ProductFilter";
-import Container from "../../components/Container";
 import ShopPagination from "../../components/Shop/ShopPagination";
 import PageRouter from "../../components/Router/PageRouter";
 
@@ -24,7 +23,7 @@ export default async function Shop() {
     { route_title: "دسته بندی", route_link: "/" },
   ];
   return (
-    <Container>
+    <div className="container mx-auto">
       <PageRouter routerList={route} />
       <div className="grid grid-cols-12 gap-10 max-xl:text-sm">
         <div className="col-span-2 max-xl:col-span-3 max-lg:hidden">
@@ -47,6 +46,6 @@ export default async function Shop() {
           <ShopPagination />
         </div>
       </div>
-    </Container>
+    </div>
   );
 }

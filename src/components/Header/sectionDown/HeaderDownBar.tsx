@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Container from "../../Container";
 import HeaderCategory from "./HeaderCategory";
 import HeaderContactUs from "./HeaderContactUs";
 import Nav from "./Nav";
@@ -33,7 +32,7 @@ export default function HeaderDownBar() {
         isNavVisible ? "translate-y-0" : "-translate-y-full -bottom-0.5"
       } `}
     >
-      <Container>
+      <div className="container mx-auto">
         <div className="flex justify-between">
           <div className="flex justify-start items-center">
             <HeaderCategory />
@@ -42,7 +41,7 @@ export default function HeaderDownBar() {
           </div>
           <HeaderContactUs />
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

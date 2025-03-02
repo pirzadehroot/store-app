@@ -8,7 +8,6 @@ import {
   RiTelegram2Line,
   RiTwitterXFill,
 } from "react-icons/ri";
-import Container from "../Container";
 import ToPersianNumber from "../../utils/ToPersianNumber";
 import { IoTimeOutline } from "react-icons/io5";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
@@ -36,7 +35,7 @@ export default function ContactMap() {
   }, []);
 
   return (
-    <Container>
+    <div className="container mx-auto">
       <div className="grid -mt-16 grid-cols-12 gap-5 p-5 bg-white dark:bg-slate-800 rounded-lg border border-gray-300 shadow-md dark:border-gray-750">
         <div className="col-span-4">
           <ul className="snap-y-2 text-sm">
@@ -131,6 +130,6 @@ export default function ContactMap() {
           ></div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }

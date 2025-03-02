@@ -1,6 +1,5 @@
 "use client";
 import CartItem from "../../components/Cart/CartItem";
-import Container from "../../components/Container";
 import useCartStore from "../../store/useCartStore";
 
 export default function Cart() {
@@ -8,7 +7,7 @@ export default function Cart() {
 
   return (
     <div>
-      <Container>
+      <div className="contianer mx-auto">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-9 bg-gray-100 dark:bg-gray-800 border rounded-lg p-5">
             {cart == undefined || cart == null ? (
@@ -43,7 +42,7 @@ export default function Cart() {
             </button>
           </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

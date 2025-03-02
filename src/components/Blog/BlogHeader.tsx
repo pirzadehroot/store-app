@@ -3,7 +3,6 @@ import React from "react";
 import blog_img from "@/../public/images/blog/blog-new-10.jpg";
 import Link from "next/link";
 import { LuGamepad2 } from "react-icons/lu";
-import Container from "../Container";
 
 export default function BlogHeader() {
   const sidebarLinks = [
@@ -91,7 +90,7 @@ export default function BlogHeader() {
   ];
 
   return (
-    <Container>
+    <div className="container mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-2 p-5 rounded-lg shadow-lg border">
           <ul className="space-y-4 text-sm">
@@ -128,6 +127,6 @@ export default function BlogHeader() {
           ))}
         </div>
       </div>
-    </Container>
+    </div>
   );
 }

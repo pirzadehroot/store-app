@@ -3,7 +3,7 @@ import { create } from "zustand";
 
 // 🛒 نوع محصول
 interface ICartType {
-  id: number; 
+  id: number;
   name: string;
   qty: number;
 }

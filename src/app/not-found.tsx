@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import notFound_img from "@/../public/images/404.png";
-import Container from "../components/Container";
 
 export const metadata: Metadata = {
   title: "صفحه 404",
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <Container>
+    <div className="container mx-auto">
       <div className="flex-row text-center">
         <Image
           className="mx-auto"
@@ -28,6 +27,6 @@ export default function NotFound() {
           بازگشت به فروشگاه
         </Link>
       </div>
-    </Container>
+    </div>
   );
 }

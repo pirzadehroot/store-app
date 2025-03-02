@@ -3,7 +3,6 @@ import React from "react";
 import type { Metadata } from "next";
 import { HiStar } from "react-icons/hi2";
 import axios from "axios";
-import Container from "../../../components/Container";
 import AddRemoveProduct from "../../../components/Cart/AddRemoveProduct";
 import static_img from "@/../public/images/product/static-product-image.png";
 
@@ -47,7 +46,7 @@ export default async function ProductDetail({ params }: IPropsType) {
   const product = await getProduct(params.slug);
 
   return (
-    <Container>
+    <div className="container mx-auto">
       <div className="grid grid-cols-12 gap-5">
         <div className="col-span-4 shadow-xl border-2 p-2 rounded-lg">
           <Image
@@ -73,6 +72,6 @@ export default async function ProductDetail({ params }: IPropsType) {
           <AddRemoveProduct item={product} />
         </div>
       </div>
-    </Container>
+    </div>
   );
 }

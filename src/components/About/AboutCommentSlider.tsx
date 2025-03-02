@@ -1,13 +1,9 @@
 "use client";
 import { GoCommentDiscussion } from "react-icons/go";
-import Container from "../Container";
 import Image from "next/image";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import image1 from "../../../public/images/about/comments/22.png";
-import { Autoplay } from "swiper/modules";
 import { TiStarFullOutline } from "react-icons/ti";
+import useEmblaCarousel from "embla-carousel-react";
 
 const items = [
   {
@@ -42,41 +38,22 @@ const items = [
 ];
 
 export default function AboutCommentSlider() {
+  const [emblaRef] = useEmblaCarousel();
   return (
     <div className="py-10 mt-20 bg-gray-200 dark:bg-slate-800">
-      <Container>
+      <div className="container mx-auto">
         <div className="flex gap-2 items-center py-10">
           <GoCommentDiscussion size={25} />
           <h2 className="text-2xl">نظرات کاربران</h2>
         </div>
         <div>
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={20}
-            slidesPerView={4}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            loop
-            breakpoints={{
-              320: {
-                slidesPerView: 1,
-              },
-              640: {
-                slidesPerView: 2,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-          >
-            {items.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="flex flex-col gap-3 p-4  rounded-lg bg-white dark:bg-gray-900 ">
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container">
+              {items.map((item) => (
+                <div
+                  className="flex flex-col gap-3 p-4  rounded-lg bg-white dark:bg-gray-900 embla__slide"
+                  key={item.id}
+                >
                   <div className="flex gap-1">
                     {Array.from({ length: item.rate }).map((_, index) => (
                       <span key={index}>
@@ -99,11 +76,11 @@ export default function AboutCommentSlider() {
                     <h3 className="font-medium">{item.title}</h3>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              ))}
+            </div>
+          </div>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

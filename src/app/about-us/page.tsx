@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "../../components/Container";
 import Image from "next/image";
 import back_img from "@/../public/images/about/121278.jpg";
 import AboutCommentSlider from "../../components/About/AboutCommentSlider";
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <Container>
+      <div className="container mx-auto">
         <div className="grid grid-cols-2 gap-20 mt-20 ">
           <div className="space-y-5">
             <span className=" text-red-500">ما که هستیم ؟</span>
@@ -41,7 +40,7 @@ export default function About() {
             />
           </div>
         </div>
-      </Container>
+      </div>
       <AboutCommentSlider />
     </>
   );
