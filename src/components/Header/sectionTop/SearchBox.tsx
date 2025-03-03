@@ -1,7 +1,15 @@
 "use client";
 import React from "react";
-import Select from "react-select";
 import { LuSearch } from "react-icons/lu";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const options = [
   { value: "all", label: "همه‌ی دسته‌بندی‌ها" },
@@ -15,7 +23,7 @@ export default function SearchBox() {
     <div className="mr-10">
       <div className="flex items-center">
         <div className="w-36 z-50">
-          <Select
+          {/* <Select
             instanceId="search-select" // اضافه کردن این خط
             options={options}
             defaultValue={options[0]}
@@ -55,7 +63,19 @@ export default function SearchBox() {
                 overflow: "hidden",
               }),
             }}
-          />
+          /> */}
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Select a fruit" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {options.map((select,index) => (
+                  <SelectItem key={index} value={select.value}>{select.label}</SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* Search Box */}

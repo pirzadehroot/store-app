@@ -50,7 +50,7 @@ export default function Login() {
           </span>
         )}
         <button
-          className="bg-red-500 rounded-lg shadow-md py-2 px-3.5 text-white hover:bg-blue-600 transition-colors"
+          className="bg-red-500 rounded-lg shadow-md py-2 px-3.5 text-white hover:bg-red-600 transition-colors"
           type="submit"
         >
           ورود
