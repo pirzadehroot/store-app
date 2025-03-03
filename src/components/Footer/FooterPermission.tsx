@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import namad from "../../../public/images/Permission/namad.png";
+import namad from "@/assets/images/Permission/namad.png";
 
 export default function FooterPermission() {
   return (

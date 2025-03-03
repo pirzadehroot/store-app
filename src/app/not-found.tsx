@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import notFound_img from "@/../public/images/404.png";
+import notFound_img from "@/assets/images/404.png";
 
 export const metadata: Metadata = {
   title: "صفحه 404",

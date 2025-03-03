@@ -5,8 +5,8 @@ import Image from "next/image";
 import { GrTechnology } from "react-icons/gr";
 import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
-import image_src from "../../../../public/images/headerCategory/mega-banner-1.png";
-import CategoryIcon from "@/../public/images/headerIcons/Category-header.svg";
+import image_src from "@/assets/images/headerCategory/mega-banner-1.png";
+import CategoryIcon from "@/assets/images/headerIcons/Category-header.svg";
 
 const categories = [
   {

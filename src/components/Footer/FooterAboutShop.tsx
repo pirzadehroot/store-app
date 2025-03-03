@@ -1,11 +1,11 @@
 import React from "react";
-import LogoFooter from "./LogoFooter";
+import Logo from "../Header/sectionTop/Logo";
 
 export default function FooterAboutShop() {
   return (
     <div>
       <div className={"flex max-sm:justify-center"}>
-        <LogoFooter />
+        <Logo />
       </div>
       <p className="text-gray-600 max-sm:text-center dark:text-gray-200 font-light text-sm leading-7 text-justify tracking-wide">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { HiStar } from "react-icons/hi2";
 import axios from "axios";
 import AddRemoveProduct from "../../../components/Cart/AddRemoveProduct";
-import static_img from "@/../public/images/product/static-product-image.png";
+import static_img from "@/assets/images/product/static-product-image.png";
 
 interface IPropsType {
   params: { slug: string };

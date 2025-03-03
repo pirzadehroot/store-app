@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
+import { HiOutlineSun } from "react-icons/hi2";
+import { PiMoon } from "react-icons/pi";
 
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -37,7 +38,7 @@ const ThemeToggle = () => {
           size={30}
         />
       ) : (
-        <HiOutlineMoon
+        <PiMoon
           className="hover:text-gray-400 transform transition-transform duration-500 hover:-rotate-12"
           size={30}
         />

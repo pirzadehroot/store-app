@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import back_img from "@/../public/images/about/121278.jpg";
+import back_img from "@/assets/images/about/121278.jpg";
 import AboutCommentSlider from "../../components/About/AboutCommentSlider";
 import { Metadata } from "next";
 

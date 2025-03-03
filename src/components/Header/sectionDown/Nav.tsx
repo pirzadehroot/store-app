@@ -2,12 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import homeIcon from "@/../public/images/headerIcons/home.svg";
-import shopIcon from "@/../public/images/headerIcons/shop.svg";
-import blogIcon from "@/../public/images/headerIcons/blog.svg";
-import sellerIcon from "@/../public/images/headerIcons/seller.svg";
-import aboutIcon from "@/../public/images/headerIcons/about.svg";
-import contactIcon from "@/../public/images/headerIcons/contact.svg";
+import homeIcon from "@/assets/images/headerIcons/home.svg";
+import shopIcon from "@/assets/images/headerIcons/shop.svg";
+import blogIcon from "@/assets/images/headerIcons/blog.svg";
+import sellerIcon from "@/assets/images/headerIcons/seller.svg";
+import aboutIcon from "@/assets/images/headerIcons/about.svg";
+import contactIcon from "@/assets/images/headerIcons/contact.svg";
 
 export default function Nav() {
   const pathName = usePathname();

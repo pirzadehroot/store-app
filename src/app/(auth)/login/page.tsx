@@ -1,5 +1,4 @@
 "use client";
-import { error } from "console";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { HiMiniDevicePhoneMobile } from "react-icons/hi2";

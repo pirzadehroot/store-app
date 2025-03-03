@@ -1,6 +1,6 @@
 import ToPersianNumber from "../../../utils/ToPersianNumber";
 import Link from "next/link";
-import contactIcon from "@/../public/images/headerIcons/contact.svg";
+import contactIcon from "@/assets/images/headerIcons/contact.svg";
 import Image from "next/image";
 
 export default function HeaderContactUs() {

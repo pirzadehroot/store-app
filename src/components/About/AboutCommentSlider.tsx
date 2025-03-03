@@ -1,7 +1,7 @@
 "use client";
 import { GoCommentDiscussion } from "react-icons/go";
 import Image from "next/image";
-import image1 from "../../../public/images/about/comments/22.png";
+import image1 from "@/assets/images/about/comments/22.png";
 import { TiStarFullOutline } from "react-icons/ti";
 import useEmblaCarousel from "embla-carousel-react";
 

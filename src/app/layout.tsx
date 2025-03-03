@@ -15,10 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className="dark scroll-smooth">
-      <body className="font-yekan text-right dark:bg-gray-925 bg-white !text-gray-850 dark:!text-gray-100 !duration-300 ">
-        {/* <Header /> */}
+      <body className="font-Vazir text-right dark:bg-gray-925 bg-white !text-gray-850 dark:!text-gray-100  ">
+        <Header />
         <main className={"my-7"}>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
