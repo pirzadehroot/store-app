@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function FooterDescription() {
+export default function FooterSafe() {
   return (
-    <footer className="text-sm py-4 border-t border-gray-200 dark:border-gray-750 flex justify-between max-sm:flex-col max-sm:gap-3 items-center">
+    <footer className="text-sm py-4 border-t border-border flex justify-between max-sm:flex-col max-sm:gap-3 items-center">
       <p className="text-gray-500">
         تمامی حقوق برای سایت{" "}
         <Link
@@ -13,7 +13,7 @@ export default function FooterDescription() {
         </Link>{" "}
         محفوظ است.
       </p>
-      <p className="text-gray-500 ">
+      <p className="text-gray-500">
         <span>برنامه‌نویس و طراح سایت </span>
         <Link
           href="https://sinapirzadeh.ir/"

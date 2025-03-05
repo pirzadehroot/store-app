@@ -4,15 +4,26 @@ import Link from "next/link";
 import { RiGithubLine, RiTelegram2Line } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+import { GoTriangleLeft } from "react-icons/go";
 
-const FooterMenu = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+interface LinkItem {
+  href: string;
+  label: string;
+}
 
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
+interface MenuItem {
+  title: string;
+  links: LinkItem[];
+}
+
+const FooterMenu: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number>(10);
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? 10 : index);
   };
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       title: "دسترسی سریع",
       links: [
@@ -43,21 +54,26 @@ const FooterMenu = () => {
   ];
 
   return (
-    <div className="py-10 grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:justify-items-center max-sm:text-center items-start gap-10">
+    <div className="py-10 grid grid-cols-4 max-md:grid-cols-1 max-md:justify-items-center max-md:text-center items-start gap-5">
       {menuItems.map((item, index) => (
         <div key={index} className="w-full">
           <button
-            className="w-full flex justify-between items-center max-sm:border-b max-sm:pb-2"
+            className="w-full flex justify-between items-center max-md:border-b border-border max-md:pb-3"
             onClick={() => toggleAccordion(index)}
           >
-            <h5 className="font-normal text-lg">{item.title}</h5>
-            <span className="sm:hidden">{openIndex === index ? "−" : "+"}</span>
+            <h5>{item.title}</h5>
+            <span className="md:hidden">
+              <GoTriangleLeft
+                size={22}
+                className={`${openIndex === index ? "-rotate-90" : ""}`}
+              />
+            </span>
           </button>
-          <div className="border-t border-red-500 mt-1.5 h-1 w-12 max-sm:hidden"></div>
+          <div className="border-t-2 border-red-500 w-[15%] pb-5 mt-1 max-md:hidden"></div>
           <div
-            className={`${openIndex === index ? "block" : "hidden"} sm:block`}
+            className={`${openIndex === index ? "block" : "hidden"} md:block`}
           >
-            <ul className="space-y-4 mt-4">
+            <ul className="space-y-5 max-md:py-4">
               {item.links.map((link, linkIndex) => (
                 <li key={linkIndex}>
                   <Link
@@ -74,46 +90,38 @@ const FooterMenu = () => {
       ))}
 
       <div className="">
-        <h5 className="font-normal text-lg">دسترسی سریع</h5>
-        <div className="border-t border-red-500 mt-1.5 h-1 w-12 max-sm:hidden"></div>
-        <div className="space-y-4 mt-4">
+        <h5 className="text-lg">شبکه های اجتماعی</h5>
+        <div className="border-t-2 border-red-500 w-[15%] pb-5 mt-1 max-sm:hidden"></div>
+        <div className="space-y-4">
           <p className="text-sm font-light text-gray-500 max-sm:text-center dark:text-gray-300 text-justify">
             برای اطلاع از جدیدترین تخفیف‌ها، در شبکه‌های اجتماعی ما را دنبال
             کنید.
           </p>
-          <ul className="flex justify-start gap-6 max-sm:justify-center">
-            <li>
-              <Link href={"/"}>
-                <FaInstagram
-                  size={30}
-                  className={"text-gray-500 hover:text-red-500"}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"}>
-                <FaLinkedin
-                  size={30}
-                  className={"text-gray-500 hover:text-red-500"}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"}>
-                <RiTelegram2Line
-                  size={30}
-                  className={"text-gray-500 hover:text-red-500"}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link href={"/"}>
-                <RiGithubLine
-                  size={30}
-                  className={"text-gray-500 hover:text-red-500"}
-                />
-              </Link>
-            </li>
+          <ul className="flex justify-around gap-6 max-sm:justify-center">
+            <Link href={"/"}>
+              <FaInstagram
+                size={30}
+                className={"text-gray-500 hover:text-red-500"}
+              />
+            </Link>
+            <Link href={"/"}>
+              <FaLinkedin
+                size={30}
+                className={"text-gray-500 hover:text-red-500"}
+              />
+            </Link>
+            <Link href={"/"}>
+              <RiTelegram2Line
+                size={30}
+                className={"text-gray-500 hover:text-red-500"}
+              />
+            </Link>
+            <Link href={"/"}>
+              <RiGithubLine
+                size={30}
+                className={"text-gray-500 hover:text-red-500"}
+              />
+            </Link>
           </ul>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../Header/MainHeader/Logo";
 
-export default function FooterAboutShop() {
+export default function FooterAbout() {
   return (
     <div>
       <div className={"flex max-sm:justify-center"}>
