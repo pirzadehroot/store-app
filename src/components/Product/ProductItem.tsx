@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import ToPersianNumber from "../../utils/ToPersianNumber";
 
 export interface IProductType {
   id: number;
@@ -29,11 +28,7 @@ export default function ProductItem(product: IProductType) {
           <div className="text-lg flex gap-2 items-center">
             تومان
             <div className="font-bold text-red-500">
-              <ToPersianNumber
-                number={product?.price
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              />
+              {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </div>
           </div>
           <div className="-ml-3">
@@ -60,11 +55,7 @@ export default function ProductItem(product: IProductType) {
           <div className="text-base flex my-3 gap-2 items-center">
             تومان
             <div className="font-bold text-red-500">
-              <ToPersianNumber
-                number={product?.price
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              />
+              {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </div>
           </div>
           <span className="rounded-lg bg-red-500 text-white p-1 px-2">

@@ -8,7 +8,6 @@ import {
   RiTelegram2Line,
   RiTwitterXFill,
 } from "react-icons/ri";
-import ToPersianNumber from "../../utils/ToPersianNumber";
 import { IoTimeOutline } from "react-icons/io5";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
 import { HiOutlineMail } from "react-icons/hi";
@@ -72,9 +71,7 @@ export default function ContactMap() {
                 شماره تماس فروش
               </span>
               <span className="items-center flex justify-between text-gray-700 dark:text-gray-300">
-                <ToPersianNumber number={0} />
-                <ToPersianNumber number={21} />-
-                <ToPersianNumber number={222222222} />
+                021-222222222
               </span>
             </li>
             <li className="items-center flex justify-between border-b border-gray-200 dark:border-gray-500 py-3">
@@ -86,9 +83,7 @@ export default function ContactMap() {
                 شماره تماس پشتیبانی
               </span>
               <span className="items-center flex justify-between text-gray-700 dark:text-gray-300">
-                <ToPersianNumber number={0} />
-                <ToPersianNumber number={21} />-
-                <ToPersianNumber number={222222222} />
+                021-222222222
               </span>
             </li>
             <li className="items-center flex justify-between border-b border-gray-200 dark:border-gray-500 py-3">

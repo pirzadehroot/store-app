@@ -2,7 +2,6 @@ import Link from "next/link";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { LuShoppingCart } from "react-icons/lu";
 import { TbCategory } from "react-icons/tb";
-import ToPersianNumber from "../../utils/ToPersianNumber";
 import { AiOutlineUser } from "react-icons/ai";
 
 export default function MobileNavBar() {
@@ -21,7 +20,7 @@ export default function MobileNavBar() {
         <>
           <LuShoppingCart size={30} />
           <span className="absolute ext-white -bottom-1 -right-2.5 bg-red-500 text-sm px-1.5 text-white rounded-md border ">
-            <ToPersianNumber number={1} />
+            1
           </span>
         </>
       ),

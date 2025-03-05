@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import ToPersianNumber from "../../../utils/ToPersianNumber";
 import { LuShoppingCart } from "react-icons/lu";
 
 export default function CartIcon() {
@@ -12,7 +11,7 @@ export default function CartIcon() {
           className="hover:text-hover_low transition-colors"
         />
         <span className="absolute ext-white -bottom-1 -right-2.5 bg-red-500 text-sm px-1.5 text-white rounded-md border ">
-          <ToPersianNumber number={1} />
+          1
         </span>
       </Link>
     </div>

@@ -13,13 +13,11 @@ export default function About() {
   return (
     <>
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 gap-20 mt-20 ">
-          <div className="space-y-5">
+        <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-20 py-20 ">
+          <div className="space-y-3">
             <span className=" text-red-500">ما که هستیم ؟</span>
-            <h1 className="text-3xl ">
-              درباره فروشگاه آنلاین ما بیشتر بدانید!
-            </h1>
-            <p className="text-gray-500 dark:text-gray-200 text-justify ni">
+            <h1 className="text-3xl">درباره فروشگاه آنلاین ما بیشتر بدانید!</h1>
+            <p className="text-low text-justify leading-relaxed">
               ما پلتفرمی مبتنی بر تکنولوژی هستیم که ماموریت خود را ایجاد
               تجربه‌ای خوشایند از خرید و فروش برای تمام مردم ایران می‌دانیم. به
               عنوان یکی از پر مخاطب ترین فروشگاه های آنلاین ایران و منطقه در
