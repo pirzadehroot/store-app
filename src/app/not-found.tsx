@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="container mx-auto">
-      <div className="flex-row text-center">
+      <div className="flex-row text-center py-10">
         <Image
           className="mx-auto"
           src={notFound_img}
