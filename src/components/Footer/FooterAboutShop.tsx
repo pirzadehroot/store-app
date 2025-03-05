@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../Header/sectionTop/Logo";
+import Logo from "../Header/MainHeader/Logo";
 
 export default function FooterAboutShop() {
   return (

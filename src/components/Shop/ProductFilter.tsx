@@ -60,7 +60,9 @@ const filterSections: FilterSection[] = [
   },
 ];
 
-export default function ProductFilter({ isForMobile = false }: IFilterMobileType) {
+export default function ProductFilter({
+  isForMobile = false,
+}: IFilterMobileType) {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
     price: false,
     category: false,
@@ -114,7 +116,9 @@ export default function ProductFilter({ isForMobile = false }: IFilterMobileType
             onClick={() => toggleSection(section.key)}
             className="w-full flex justify-between items-center py-2 text-gray-700 font-medium"
           >
-            <span className="text-gray-700 dark:text-gray-50">{section.title}</span>
+            <span className="text-gray-700 dark:text-gray-50">
+              {section.title}
+            </span>
             <IoChevronDown
               className={`w-5 h-5 transition-transform text-gray-400 ${
                 openSections[section.key] ? "rotate-180" : ""

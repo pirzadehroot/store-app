@@ -7,7 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 const items = [
   {
-    id: Math.random(),
+    id: 1,
     rate: 4,
     image: image1,
     title: "محسن",
@@ -15,21 +15,21 @@ const items = [
       "خوبه دوست دارم کارشون رو خیل رو موارد دیگه تعثییر میزاره ولی خوب نمیشه کقت همیشه هم خوبه.",
   },
   {
-    id: Math.random(),
+    id: 2,
     rate: 3,
     image: image1,
     title: "علی",
     comment: "تجربه خوبی بود، اما می‌تواند بهتر باشد.",
   },
   {
-    id: Math.random(),
+    id: 3,
     rate: 5,
     image: image1,
     title: "رضا",
     comment: "عالی! واقعاً راضی‌ام.",
   },
   {
-    id: Math.random(),
+    id: 4,
     rate: 2,
     image: image1,
     title: "نازنین",

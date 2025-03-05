@@ -1,4 +1,4 @@
-import Logo from "../../components/Header/sectionTop/Logo";
+import Logo from "../../components/Header/MainHeader/Logo";
 
 export default function layout({
   children,

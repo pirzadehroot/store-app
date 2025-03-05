@@ -1,13 +1,13 @@
-import HeaderDownBar from "./sectionDown/HeaderDownBar";
-import MoblieTopNavBar from "./mobile/MoblieTopNavBar";
-import HeaderTopBar from "./sectionTop/HeaderTopBar";
+import MoblieHeader from "./mobile/MoblieHeader";
+import NavHeader from "./Nav/HeaderNav";
+import MainHeader from "./MainHeader/MainHeader";
 
 export default function Header() {
   return (
-    <header className="sticky w-full top-0 left-0 z-20">
-      <MoblieTopNavBar />
-      <HeaderTopBar />
-      <HeaderDownBar />
+    <header className="sticky top-0 left-0 z-20">
+      <MoblieHeader />
+      <MainHeader />
+      <NavHeader />
     </header>
   );
 }
