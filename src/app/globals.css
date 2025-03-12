@@ -11,6 +11,7 @@
   --color-bg-low: #f9fafb;
   --color-hover-low: #b1b1b1;
   --color-bg_hover-low: #f1f1f1;
+  --color-red-base: #ef4444;
 }
 
 .dark {
@@ -22,6 +23,7 @@
   --color-bg-low: #1f2937;
   --color-hover-low: #f8fafc;
   --color-bg_hover-low: #4b5563;
+  --color-red-base: #ef4444;
 }
 
 @font-face {

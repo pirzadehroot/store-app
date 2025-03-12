@@ -2,10 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 export interface IProductType {
-  id: number;
+  id: string;
   image: string;
   title: string;
-  rating: number;
   price: number;
   description: string;
 }

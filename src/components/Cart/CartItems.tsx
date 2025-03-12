@@ -2,9 +2,8 @@ import React from "react";
 import CartItem from "./CartItem";
 import useCartStore from "../../store/useCartStore";
 
-export default function CartItems() {
+export default async function CartItems() {
   const { cart } = useCartStore();
-
   return (
     <div className="p-5">
       {!cart ? (

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Shop() {
-  const data = await axios.get("http://localhost:8001/products");
+  const data = await axios.get("http://localhost:8000/shop");
   const products = (await data.data) as IProductType[];
 
   const route = [
@@ -23,7 +23,7 @@ export default async function Shop() {
     { route_title: "دسته بندی", route_link: "/" },
   ];
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-10">
       <PageRouter routerList={route} />
       <div className="grid grid-cols-12 gap-10 max-xl:text-sm">
         <div className="col-span-2 max-xl:col-span-3 max-lg:hidden">

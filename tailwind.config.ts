@@ -30,6 +30,7 @@ export default {
         hover_low: "var(--color-hover-low)",
         bg_low: "var(--color-bg-low)",
         bg_hover_low: "var(--color-bg_hover-low)",
+        red_base: "var(--color-red-base)",
         red: {
           500: "#ef4444",
           600: "#dc2626",
