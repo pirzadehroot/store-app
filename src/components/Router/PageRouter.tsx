@@ -1,30 +1,27 @@
-import Link from "next/link";
-import { LuHouse } from "react-icons/lu";
+import Link from 'next/link';
+import { RiHome2Line } from 'react-icons/ri';
 
-interface IRouterType {
+interface RouterDto {
   route_link: string;
   route_title: string;
 }
 
-export default function PageRouter({ routerList }: IRouterType[]) {
+interface PageRouterProps {
+  routerList: RouterDto[];
+}
+
+export default function PageRouter({ routerList }: PageRouterProps) {
   return (
-    <div className={"flex gpa-5 mb-7"}>
-      <Link href={"/"}>
-        <LuHouse size={20} className="dark:text-gray-110 text-gray-400" />
+    <div className="flex pb-5 text-sm items-center text-gray-400">
+      <Link href="/">
+        <RiHome2Line size={20} />
       </Link>
       {routerList &&
-        routerList.map((route: IRouterType, index: string) => (
-          <div className={"items-center"} key={index}>
-            <span className="dark:text-gray-110 text-gray-400 text-sm mx-3">
-              /
-            </span>
-            <Link
-              className="dark:text-gray-11 font-light text-gray-400 text-sm"
-              href={route.route_link}
-            >
-              {route.route_title}
-            </Link>
-          </div>
+        routerList.map((route, index) => (
+          <Link key={index} href={route.route_link}>
+            <span className="px-3">/</span>
+            {route.route_title}
+          </Link>
         ))}
     </div>
   );

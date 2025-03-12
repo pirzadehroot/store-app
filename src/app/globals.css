@@ -27,22 +27,22 @@
 }
 
 @font-face {
-  font-family: "Vazir";
-  src: url("../assets/fonts/Vazirmatn-Light.woff2") format("woff2");
+  font-family: 'Vazir';
+  src: url('../assets/fonts/Vazirmatn-Light.woff2') format('woff2');
   font-weight: 300; /* وزن Light */
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Vazir";
-  src: url("../assets/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-family: 'Vazir';
+  src: url('../assets/fonts/Vazirmatn-Regular.woff2') format('woff2');
   font-weight: 400; /* وزن Regular */
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Vazir";
-  src: url("../assets/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-family: 'Vazir';
+  src: url('../assets/fonts/Vazirmatn-Bold.woff2') format('woff2');
   font-weight: 700; /* وزن Bold */
   font-style: normal;
 }
@@ -72,13 +72,13 @@ body {
 }
 
 /* Remove number input spinners */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield; /* Firefox */
 }
 
@@ -92,13 +92,12 @@ select {
 
 /* Contact page background */
 .bg_contact-img {
-  background: url("../assets/images/Contact/contact-header.png");
+  background: url('../assets/images/Contact/contact-header.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* Embla slider */
 /* Embla slider */
 .embla {
   overflow: hidden;

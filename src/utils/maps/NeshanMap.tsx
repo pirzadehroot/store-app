@@ -51,7 +51,7 @@ export default function NeshanMap() {
         });
 
         setMap(mapInstance);
-      }
+      },
     );
 
     return () => {

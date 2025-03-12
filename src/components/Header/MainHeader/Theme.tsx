@@ -9,7 +9,7 @@ export default function Theme() {
   useEffect(() => {
     const theme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
     setIsDarkMode(theme === "dark" || (!theme && prefersDark));
   }, []);

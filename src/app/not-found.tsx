@@ -1,11 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-import type { Metadata } from "next";
-import notFound_img from "@/assets/images/404.png";
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import notFound_img from '@/assets/images/404.png';
 
 export const metadata: Metadata = {
-  title: "صفحه 404",
-  description: "متاسفانه صفحه ای یافت نشد!",
+  title: 'صفحه 404',
+  description: 'متاسفانه صفحه ای یافت نشد!',
 };
 
 export default function NotFound() {
@@ -15,7 +15,7 @@ export default function NotFound() {
         <Image
           className="mx-auto"
           src={notFound_img}
-          alt={"not found page"}
+          alt={'not found page'}
           width={500}
           height={500}
         />

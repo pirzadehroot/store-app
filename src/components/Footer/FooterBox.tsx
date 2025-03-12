@@ -1,12 +1,12 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import React from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import image from "@/assets/images/footerIcons/svg-image-26.svg";
-import image1 from "@/assets/images/footerIcons/svg-image-27.svg";
-import image2 from "@/assets/images/footerIcons/svg-image-28.svg";
-import image3 from "@/assets/images/footerIcons/svg-image-29.svg";
+'use client';
+import Image, { StaticImageData } from 'next/image';
+import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import image from '@/assets/images/footerIcons/svg-image-26.svg';
+import image1 from '@/assets/images/footerIcons/svg-image-27.svg';
+import image2 from '@/assets/images/footerIcons/svg-image-28.svg';
+import image3 from '@/assets/images/footerIcons/svg-image-29.svg';
 
 interface SlideItem {
   id: number;
@@ -19,35 +19,35 @@ const items: SlideItem[] = [
   {
     id: 1,
     image: image,
-    title: "پشتیبانی تا ۱۲ شب",
-    description: "حتی جمعه ها",
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
   },
   {
     id: 2,
     image: image1,
-    title: "پشتیبانی تا ۱۲ شب",
-    description: "حتی جمعه ها",
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
   },
   {
     id: 3,
     image: image2,
-    title: "پشتیبانی تا ۱۲ شب",
-    description: "حتی جمعه ها",
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
   },
   {
     id: 4,
     image: image3,
-    title: "پشتیبانی تا ۱۲ شب",
-    description: "حتی جمعه ها",
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
   },
   {
     id: 5,
     image: image3,
-    title: "پشتیبانی تا ۱۲ شب",
-    description: "حتی جمعه ها",
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
   },
 ];
-// todo:Not Working!
+
 const FooterBox: React.FC = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true, slidesToScroll: 4 }, [
     Autoplay({ delay: 4000, stopOnInteraction: true }),

@@ -1,7 +1,7 @@
-import React from "react";
-import MobileMenu from "./MobileMenu";
-import Logo from "../MainHeader/Logo";
-import NavContact from "../Nav/NavContact";
+import React from 'react';
+import MobileMenu from './MobileMenu';
+import Logo from '../MainHeader/Logo';
+import NavContact from '../Nav/NavContact';
 
 export default function MoblieHeader() {
   return (

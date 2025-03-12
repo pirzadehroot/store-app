@@ -1,16 +1,16 @@
-import FooterBox from "./FooterBox";
-import FooterMeno from "./FooterMeno";
-import MobileNavBar from "./MobileNavBar";
-import FooterSafe from "./FooterSafe";
-import FooterAbout from "./FooterAbout";
-import FooterPermission from "./FooterPermission";
+import FooterBox from './FooterBox';
+import FooterMenu from './FooterMenu';
+import MobileNavBar from './MobileNavBar';
+import FooterSafe from './FooterSafe';
+import FooterAbout from './FooterAbout';
+import FooterPermission from './FooterPermission';
 
 export default function Footer() {
   return (
     <footer className="bg-bg_low border-t border-border">
-      <div className="max-sm:mb-16">
+      <div className="max-sm:mb-14">
         <div className="container mx-auto">
-          <FooterMeno />
+          <FooterMenu />
           <FooterBox />
           <div className="grid grid-cols-2 my-7 max-sm:grid-cols-1 max-sm:gap-3">
             <FooterAbout />
@@ -19,7 +19,7 @@ export default function Footer() {
           <FooterSafe />
         </div>
       </div>
-      <div className={"max-lg:visible lg:hidden z-50"}>
+      <div className={'max-lg:visible lg:hidden z-50'}>
         <MobileNavBar />
       </div>
     </footer>
