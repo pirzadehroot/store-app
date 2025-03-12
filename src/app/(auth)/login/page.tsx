@@ -11,26 +11,32 @@ export default function Login() {
   } = useForm();
   const userRegister = () => {
     // handleSubmit()
+    alert("your are sing@");
   };
   return (
     <>
       <Link
         href="/login-phone"
-        className="text-sm flex justify-end items-center gap-2 my-3 dark:text-gray-300 text-gray-600 hover:text-blue-500 transition-colors"
+        className="inline-block gap-2 my-3 hover:text-blue-500 transition-colors"
         aria-label="ورود با شماره موبایل"
       >
-        ورود با شماره مبایل
-        <HiMiniDevicePhoneMobile size={22} />
+        <span className="flex items-center gap-2">
+          <HiMiniDevicePhoneMobile size={22} />
+          ورود با شماره مبایل
+        </span>
       </Link>
-      <form className="grid space-y-3" onSubmit={handleSubmit(userRegister)}>
+
+      <form className="grid gap-5" onSubmit={handleSubmit(userRegister)}>
         <input
           {...register("email", { required: "ایمیل الزامی است" })}
-          className="outline-none bg-transparent border text-gray-700 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
+          className="outline-none border rounded-lg p-2 bg-bg border-border"
           type="email"
           placeholder="ایمیل"
         />
         {errors.email && (
-          <span className="text-red-500 text-sm">{errors.email.message}</span>
+          <span className="text-red-500 text-sm">
+            {errors.email.message as string}{" "}
+          </span>
         )}
         <input
           {...register("password", {
@@ -40,17 +46,17 @@ export default function Login() {
               message: "رمز عبور نمی‌تواند کمتر از 8 کاراکتر باشد",
             },
           })}
-          className="outline-none bg-transparent border text-gray-700 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
+          className="outline-none border rounded-lg p-2 bg-bg  border-border"
           type="password"
           placeholder="رمز عبور"
         />
         {errors.password && (
           <span className="text-red-500 text-sm">
-            {errors.password.message}
+            {errors.password.message as string}
           </span>
         )}
         <button
-          className="bg-red-500 rounded-lg shadow-md py-2 px-3.5 text-white hover:bg-blue-600 transition-colors"
+          className="bg-red-500 rounded-lg shadow-md py-2 px-3.5 text-white hover:bg-red-600 transition-colors"
           type="submit"
         >
           ورود

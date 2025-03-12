@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import { HiMiniDevicePhoneMobile, HiOutlineEnvelope } from "react-icons/hi2";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 
 export default function PhoneLogin() {
   const {
@@ -16,12 +16,15 @@ export default function PhoneLogin() {
     <>
       <Link
         href="/login"
-        className="text-sm flex justify-end items-center gap-2 my-3 dark:text-gray-300 text-gray-600 hover:text-blue-500 transition-colors"
+        className="inline-block gap-2 my-3 hover:text-blue-500 transition-colors"
         aria-label="ورود با شماره موبایل"
       >
-        ورود با ایمیل
-        <HiOutlineEnvelope size={22} />
+        <span className="flex items-center gap-2">
+          ورود با ایمیل
+          <HiOutlineEnvelope size={22} />
+        </span>
       </Link>
+
       <form className="grid space-y-3" onSubmit={handleSubmit(userRegister)}>
         <input
           {...register("phone", {
@@ -31,7 +34,7 @@ export default function PhoneLogin() {
               message: "شماره تلفن باید ۱۱ رقم باشد",
             },
           })}
-          className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
+          className="outline-none border rounded-lg p-2 bg-bg border-border"
           type="number"
           placeholder="شماره تلفن"
           style={{
@@ -40,35 +43,45 @@ export default function PhoneLogin() {
           }}
         />
         {errors.phone && (
-          <span className="text-red-500 text-sm">{errors.phone.message}</span>
+          <span className="text-red-500 text-sm">
+            {errors.phone.message as string}
+          </span>
         )}
 
-        <input
-          {...register("phone_active", {
-            required: "کد فعال‌سازی الزامی است",
-            pattern: {
-              value: /^[0-9]{6}$/,
-              message: "کد فعال‌سازی باید ۶ رقم باشد",
-            },
-          })}
-          className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
-          type="number"
-          placeholder="کد فعال‌سازی"
-          style={{
-            WebkitAppearance: "none",
-            MozAppearance: "textfield",
-          }}
-        />
+        <div className="flex gap-5">
+          <input
+            {...register("phone_active", {
+              required: "کد فعال‌سازی الزامی است",
+              pattern: {
+                value: /^[0-9]{6}$/,
+                message: "کد فعال‌سازی باید ۶ رقم باشد",
+              },
+            })}
+            className="outline-none border rounded-lg p-2 bg-bg border-border"
+            type="number"
+            placeholder="کد فعال‌سازی"
+            style={{
+              WebkitAppearance: "none",
+              MozAppearance: "textfield",
+            }}
+          />
+          <button
+            type="button"
+            className="p-2 bg-green-500 text-sm text-white rounded-lg shadow-md"
+          >
+            ارسال کد
+          </button>
+        </div>
         {errors.phone_active && (
           <span className="text-red-500 text-sm">
-            {errors.phone_active.message}
+            {errors.phone_active.message as string}
           </span>
         )}
         <button
           className="bg-red-500 rounded-lg shadow-md py-2 px-3.5 text-white hover:bg-red-600 transition-colors"
           type="submit"
         >
-          ورود
+          ارسال کد
         </button>
       </form>
     </>

@@ -5,8 +5,6 @@ import { useForm } from "react-hook-form";
 import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
 
 interface IUserRegister {
-  phone: string;
-  phone_active: string;
   email: string;
   name: string;
   password: string;
@@ -22,28 +20,25 @@ export default function Register() {
       name: "",
       email: "",
       password: "",
-      phone: "",
-      phone_active: "",
     },
   });
 
-  const userRegister = (data: IUserRegister) => {
-    console.log(data); // داده‌های فرم را چاپ می‌کند
-    // منطق ثبت‌نام را اینجا اضافه کنید
-  };
+  const userRegister = (data: IUserRegister) => {};
 
   return (
     <>
       <Link
         href="/login-phone"
-        className="text-sm flex justify-end items-center gap-2 my-3 dark:text-gray-300 text-gray-600 hover:text-blue-500 transition-colors"
+        className="inline-block gap-2 my-3 hover:text-blue-500 transition-colors"
         aria-label="ورود با شماره موبایل"
       >
-        ثبت نام با شماره مبایل
-        <HiMiniDevicePhoneMobile size={22} />
+        <span className="flex items-center gap-2">
+          <HiMiniDevicePhoneMobile size={22} />
+          ورود با شماره مبایل
+        </span>
       </Link>
+
       <form className="grid space-y-5" onSubmit={handleSubmit(userRegister)}>
-        {/* فیلد نام */}
         <input
           {...register("name", {
             required: "نام الزامی است",
@@ -56,15 +51,16 @@ export default function Register() {
               message: "نام نمی‌تواند بیشتر از ۳۰ کاراکتر باشد",
             },
           })}
-          className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
+          className="outline-none border rounded-lg p-2 bg-bg border-border"
           type="text"
           placeholder="نام"
         />
         {errors.name && (
-          <span className="text-red-500 text-sm">{errors.name.message}</span>
+          <span className="text-red-500 text-sm">
+            {errors.name.message as string}
+          </span>
         )}
 
-        {/* فیلد ایمیل */}
         <input
           {...register("email", {
             required: "ایمیل الزامی است",
@@ -73,15 +69,16 @@ export default function Register() {
               message: "ایمیل معتبر نیست",
             },
           })}
-          className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
+          className="outline-none border rounded-lg p-2 bg-bg border-border"
           type="email"
           placeholder="ایمیل"
         />
         {errors.email && (
-          <span className="text-red-500 text-sm">{errors.email.message}</span>
+          <span className="text-red-500 text-sm">
+            {errors.email.message as string}
+          </span>
         )}
 
-        {/* فیلد رمز عبور */}
         <input
           {...register("password", {
             required: "رمز عبور الزامی است",
@@ -90,13 +87,13 @@ export default function Register() {
               message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
             },
           })}
-          className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
+          className="outline-none border rounded-lg p-2 bg-bg border-border"
           type="password"
           placeholder="رمز عبور"
         />
         {errors.password && (
           <span className="text-red-500 text-sm">
-            {errors.password.message}
+            {errors.password.message as string}
           </span>
         )}
 
@@ -107,7 +104,6 @@ export default function Register() {
           ایجاد حساب کاربری
         </button>
 
-        {/* لینک ورود */}
         <span className="text-gray-500 dark:text-gray-300 text-sm">
           از قبل حساب کاربری دارید؟{" "}
           <Link

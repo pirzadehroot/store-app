@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <div className="-mt-10">
+    <div>
       <div className="bg_contact-img h-64">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-sm:text-center">
           <h1 className="text-2xl text-white pt-12 mb-5">تماس با ما</h1>
           <hr className={"bg-red-500"} />
           <p className=" text-white my-5">
@@ -22,9 +22,9 @@ export default function Contact() {
       </div>
       <ContactMap />
       <div className="container mx-auto">
-        <div className="my-10">
+        <div className="my-10 space-y-4 max-sm:text-center">
           <h2 className="text-2xl pt-10">ارسال پیام به ما</h2>
-          <p className="text-base my-3">
+          <p className="">
             برای پیگیری سفارش خود و یا طرح سوال، فرم زیر را تکمیل کنید.
           </p>
           <ContactForm />

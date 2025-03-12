@@ -1,77 +1,35 @@
-import React from "react";
-import Image from "next/image";
-import ToPersianNumber from "../../utils/ToPersianNumber";
+import React from 'react';
+import Image from 'next/image';
+import { ProductDto } from '../../app/shop/dto/product.dto';
+import { HiOutlineShoppingCart } from 'react-icons/hi2';
 
-export interface IProductType {
-  id: number;
-  image: string;
-  title: string;
-  rating: number;
-  price: number;
-  description: string;
-}
-
-export default function ProductItem(product: IProductType) {
+export default function ProductItem(product: ProductDto) {
   return (
-    <>
-      <div className="max-sm:hidden rounded-2xl p-3 border-2 group hover:border-red-500 transition-colors duration-200 dark:hover:border-red-500 dark:border-gray-600">
-        <div className=" px-8 py-6">
-          <Image
-            className="rounded-lg"
-            src={product?.image}
-            alt="s"
-            width={500}
-            height={600}
-          />
+    <div className="rounded-2xl p-3 border-2 border-border group transition-colors duration-200 hover:border-red-500 max-sm:grid max-sm:grid-cols-12 max-sm:rounded-lg max-sm:p-2 max-sm:gap-5 max-sm:items-center">
+      <div className="p-4 max-sm:p-1 max-sm:col-span-4">
+        <Image
+          className="rounded-lg"
+          src={product?.imageUrl}
+          alt={product?.title}
+          width={500}
+          height={600}
+        />
+      </div>
+      <h3 className="text-xl mb-4 text-center max-sm:text-base max-sm:col-span-8 max-sm:text-left">
+        {product?.title}
+      </h3>
+      <div className="flex justify-between items-center border-t-2 py-5 border-border max-sm:border-t-0 max-sm:col-span-8">
+        <div className="text-lg flex gap-2 items-center max-sm:text-base">
+          تومان
+          <div className="font-bold text-red-500">
+            {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          </div>
         </div>
-        <h3 className="text-xl mb-4 text-center">{product?.title}</h3>
-        <div className="flex justify-between items-center border-t-2 py-5 border-gray-200 dark:border-gray-600">
-          <div className="text-lg flex gap-2 items-center">
-            تومان
-            <div className="font-bold text-red-500">
-              <ToPersianNumber
-                number={product?.price
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              />
-            </div>
-          </div>
-          <div className="-ml-3">
-            <span className="rounded-r-full group-hover:bg-red-500 text-gray-700 bg-gray-200 dark:bg-gray-600 dark:text-gray-100  group-hover:text-white p-2 pr-3 transition-colors duration-200">
-              خرید محصول
-            </span>
-          </div>
+        <div className="-ml-3 px-4 py-1 rounded-r-full group-hover:bg-red-500 bg-border group-hover:text-white transition-colors duration-100 max-sm:ml-0 max-sm:px-2 max-sm:py-1 max-sm:rounded-lg max-sm:flex max-sm:gap-2 max-sm:items-center max-sm:bg-red-500 max-sm:text-white">
+          <HiOutlineShoppingCart size={30} />
+          <span className="max-sm:inline hidden">خرید محصول</span>
         </div>
       </div>
-
-      {/* mobile size */}
-      <div className="md:hidden grid grid-cols-12 rounded-lg p-1 gap-3 border items-center dark:border-gray-600">
-        <div className="p-1 col-span-4">
-          <Image
-            className="rounded-lg"
-            src={product?.image}
-            alt="s"
-            width={500}
-            height={600}
-          />
-        </div>
-        <div className="col-span-8">
-          <h3 className="text-base">{product?.title}</h3>
-          <div className="text-base flex my-3 gap-2 items-center">
-            تومان
-            <div className="font-bold text-red-500">
-              <ToPersianNumber
-                number={product?.price
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-              />
-            </div>
-          </div>
-          <span className="rounded-lg bg-red-500 text-white p-1 px-2">
-            خرید محصول
-          </span>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

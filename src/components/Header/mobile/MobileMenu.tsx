@@ -1,89 +1,136 @@
-"use client";
-import Link from "next/link";
-import { useState } from "react";
-import { HiBars3BottomRight, HiXMark } from "react-icons/hi2";
-import { IoIosCloseCircleOutline } from "react-icons/io";
-import { PiUsersThreeLight } from "react-icons/pi";
-import ThemeToggle from "../sectionTop/ThemeToggle";
-import SearchBoxMobile from "./SearchBoxMobile";
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { PiUsersThreeLight } from 'react-icons/pi';
+import Theme from '../MainHeader/Theme';
+import Logo from '../MainHeader/Logo';
+import { HiMenuAlt3 } from 'react-icons/hi';
+import { LuSearch } from 'react-icons/lu';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="p-2  dark:text-gray-100 text-gray-800"
-      >
-        {isOpen ? (
-          <HiXMark size={40} className="text-gray-500 dark:text-white" />
-        ) : (
-          <HiBars3BottomRight
-            className="text-gray-500 dark:text-white"
-            size={40}
-          />
-        )}
+    <div className="relative z-10">
+      <button onClick={() => setIsOpen(!isOpen)} className="pt-2">
+        <HiMenuAlt3 size={37} />
       </button>
 
-      {/* منوی مخفی */}
+      {/* left menu */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 bg-black bg-opacity-70 transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
-        onClick={() => setIsOpen(false)} // بستن با کلیک روی بک‌دراپ
+        onClick={() => setIsOpen(false)}
       ></div>
 
       <div
-        className={`fixed top-0 right-0 h-full w-2/3 bg-white dark:bg-gray-850 shadow-lg transform transition-transform duration-500 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-2/3 bg-bg border-l border-border duration-500 ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } max-sm:w-full`}
       >
-        <div className="p-4 flex flex-row-reverse justify-between">
-          <button
-            onClick={() => setIsOpen(false)}
-            className="text-gray-500  dark:text-white  "
-          >
-            <IoIosCloseCircleOutline size={30} />
-          </button>
-          <button className="text-gray-500  dark:text-white  ">
-            <ThemeToggle />
-          </button>
+        <div className="px-5 flex flex-row-reverse items-center gap-3 justify-between bg-bg_low border-b border-border">
+          <CloseMenu />
+          <Logo />
+          <Theme />
         </div>
-        <ul className="p-4 space-y-4">
+        <div className="p-3">
           <SearchBoxMobile />
-          <li className="group">
-            <Link
-              href={""}
-              className={`relative flex gap-1 items-center dark:text-gray-100 dark:hover:text-red-500
-               transition-colors duration-300 py-1.5`}
-            >
-              <PiUsersThreeLight size={25} />
-              درباه ما
-            </Link>
-          </li>
-          <li className="group">
-            <Link
-              href={""}
-              className={`relative flex gap-1 items-center dark:text-gray-100 dark:hover:text-red-500
-               transition-colors duration-300 py-1.5`}
-            >
-              <PiUsersThreeLight size={25} />
-              درباه ما
-            </Link>
-          </li>
-          <li className="group">
-            <Link
-              href={"/"}
-              className={`relative flex gap-1 items-center dark:text-gray-100 dark:hover:text-red-500
-               transition-colors duration-300 py-1.5`}
-            >
-              <PiUsersThreeLight size={25} />
-              درباه ما
-            </Link>
-          </li>
-        </ul>
+        </div>
+        {mune()}
       </div>
     </div>
+  );
+
+  function mune() {
+    return (
+      <ul className="px-3 grid gap-7 ">
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+        <li className="">
+          <Link
+            href={''}
+            className={`flex gap-2 items-center hover:text-red-500 transition-colors`}
+          >
+            <PiUsersThreeLight size={25} />
+            صفحه اصلی
+          </Link>
+        </li>
+      </ul>
+    );
+  }
+
+  function CloseMenu() {
+    return (
+      <button onClick={() => setIsOpen(false)}>
+        <IoIosCloseCircleOutline size={33} />
+      </button>
+    );
+  }
+} 
+
+export function SearchBoxMobile() {
+  return (
+    <form className="p-2 border rounded-xl flex bg-bg_low border-border items-center justify-between">
+      <input
+        type="text"
+        placeholder="جستجو ..."
+        className="outline-none bg-transparent"
+      />
+      <LuSearch size={25} className="" />
+    </form>
   );
 }

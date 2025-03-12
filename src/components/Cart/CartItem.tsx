@@ -10,7 +10,7 @@ export default function CartItem(item: IProductType) {
         <Image
           src={item.image}
           alt="cart_alt_img"
-          className="rounded-lg shadow-lg border-2"
+          className=""
           width={200}
           height={100}
         />
