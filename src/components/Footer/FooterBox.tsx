@@ -66,27 +66,33 @@ const items: SlideItem[] = [
   },
 ];
 
-const FooterBox: React.FC = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true, slidesToScroll: 4 }, [
-    Autoplay({ delay: 4000, stopOnInteraction: true }),
+export default function FooterBox() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000 }),
   ]);
 
   return (
-    <div className="border rounded-xl p-7 bg-bg border-border">
-      <div className="embla" ref={emblaRef}>
-        <div className="embla__container">
+    <div className="border rounded-xl p-4 bg-bg border-border">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex gap-2">
           {items.map((item) => (
-            <div className="embla__slide" key={item.id}>
-              <div className="embla__slide__number flex gap-3">
+            <div
+              className="flex-shrink-0 w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 p-2"
+              key={item.id}
+            >
+              <div className="flex items-center gap-3">
                 <Image
                   src={item.image}
                   alt={item.title}
                   width={42}
                   height={42}
+                  className="rounded-md"
                 />
                 <div>
-                  <h3>{item.title}</h3>
-                  <span className="text-sm text-low">{item.description}</span>
+                  <h3 className="text-base font-semibold">{item.title}</h3>
+                  <span className="text-sm text-gray-500">
+                    {item.description}
+                  </span>
                 </div>
               </div>
             </div>
@@ -95,6 +101,4 @@ const FooterBox: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default FooterBox;
+}

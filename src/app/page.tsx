@@ -1,12 +1,19 @@
+import MainBander from '../components/Home/Slider/MainBander';
+import ProductDiscount from '../components/Home/Slider/ProductDiscount';
+
 export default function Home() {
   return (
     <div className="container mx-auto py-10">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. A nihil
-      repudiandae hic nesciunt debitis! Repellendus illum impedit dolore
-      perferendis eveniet ullam veritatis facere maxime? Ratione minus fugiat
-      aut non pariatur, inventore nam deleniti minima adipisci, maiores totam
-      voluptatibus eveniet laudantium cumque doloremque. Provident non
-      dignissimos minus voluptates dolore iusto aspernatur.
+      <section>
+        <div className="grid grid-cols-12 gap-10">
+          <div className="col-span-9 max-lg:col-span-12">
+            <MainBander />
+          </div>
+          <div className="col-span-3 max-lg:col-span-12">
+            <ProductDiscount />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
