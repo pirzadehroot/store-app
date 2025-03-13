@@ -46,6 +46,24 @@ const items: SlideItem[] = [
     title: 'پشتیبانی تا ۱۲ شب',
     description: 'حتی جمعه ها',
   },
+  {
+    id: 6,
+    image: image3,
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
+  },
+  {
+    id: 7,
+    image: image3,
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
+  },
+  {
+    id: 8,
+    image: image3,
+    title: 'پشتیبانی تا ۱۲ شب',
+    description: 'حتی جمعه ها',
+  },
 ];
 
 const FooterBox: React.FC = () => {
