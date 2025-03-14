@@ -58,28 +58,19 @@ const items: SlideItem[] = [
     title: 'پشتیبانی تا ۱۲ شب',
     description: 'حتی جمعه ها',
   },
-  {
-    id: 8,
-    image: image3,
-    title: 'پشتیبانی تا ۱۲ شب',
-    description: 'حتی جمعه ها',
-  },
 ];
 
 export default function FooterBox() {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef] = useEmblaCarousel({ loop: true, direction: 'rtl' }, [
     Autoplay({ delay: 4000 }),
   ]);
 
   return (
     <div className="border rounded-xl p-4 bg-bg border-border">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-2">
+        <div className="flex">
           {items.map((item) => (
-            <div
-              className="flex-shrink-0 w-3/4 sm:w-1/2 md:w-1/3 lg:w-1/4 p-2"
-              key={item.id}
-            >
+            <div className="flex-shrink-0  " key={item.id}>
               <div className="flex items-center gap-3">
                 <Image
                   src={item.image}

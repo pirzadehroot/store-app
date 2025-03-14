@@ -80,27 +80,26 @@ export default function ProductDiscount() {
   return (
     <div className="overflow-hidden relative">
       <div className="overflow-hidden w-full" ref={emblaRef}>
-        <div className="flex">
+        <div className="flex ">
           {data.map((productDiscount) => (
-            <div
-              key={productDiscount.id}
-              className="relative min-w-full h-[400px] rounded-3xl border-2 border-border bg-bg text-center items-center"
-            >
-              <div className="rounded-b-lg py-1 w-3/4 -mt-1 mx-auto bg-red-500 text-white">
-                {productDiscount?.discount}% تخفیف
-              </div>
-              <Image
-                src={productDiscount?.imageUrl}
-                alt={productDiscount?.title}
-                className="w-full max-w-[220px] h-auto mx-auto my-4 rounded-xl"
-              />
-              <div className="pb-2 text-lg">{productDiscount?.title}</div>
-              <div className="text-lg flex justify-center gap-2 items-center">
-                تومان
-                <div className="font-bold text-red-500">
-                  {productDiscount?.price
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            <div className="relative min-w-full  px-1" key={productDiscount.id}>
+              <div className=" rounded-3xl border-2 border-border bg-bg text-center items-center h-[400px]">
+                <div className="rounded-b-lg py-1 w-3/4 -mt-1 mx-auto bg-red-500 text-white">
+                  {productDiscount?.discount}% تخفیف
+                </div>
+                <Image
+                  src={productDiscount?.imageUrl}
+                  alt={productDiscount?.title}
+                  className="w-full max-w-[220px] h-auto mx-auto my-4 rounded-xl"
+                />
+                <div className="pb-2 text-lg">{productDiscount?.title}</div>
+                <div className="text-lg flex justify-center gap-2 items-center">
+                  تومان
+                  <div className="font-bold text-red-500">
+                    {productDiscount?.price
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                  </div>
                 </div>
               </div>
             </div>
@@ -113,7 +112,7 @@ export default function ProductDiscount() {
           {scrollSnaps.map((_, index) => (
             <DotButton
               isActiveStyle={'bg-red-500 px-3 text-white animate-jump-in'}
-              defaultStyle={'border-2 border-border '}
+              defaultStyle={'border-2 border-border'}
               key={`dot-${index}`}
               isActive={selectedIndex === index}
               onClick={() => onDotButtonClick(index)}
@@ -123,19 +122,19 @@ export default function ProductDiscount() {
       </div>
 
       <button
-        className="absolute text-low bottom-4 left-4"
+        className="absolute text-low bottom-4 right-4"
         onClick={onPrevButtonClick}
         disabled={prevBtnDisabled}
       >
-        <HiMiniChevronLeft size={30} />
+      <HiMiniChevronRight size={30} />
       </button>
 
       <button
-        className="absolute text-low bottom-4 right-4"
+        className="absolute text-low bottom-4 left-4"
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
       >
-        <HiMiniChevronRight size={30} />
+        <HiMiniChevronLeft size={30} />
       </button>
     </div>
   );

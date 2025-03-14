@@ -1,58 +1,58 @@
-"use client";
-import { GoCommentDiscussion } from "react-icons/go";
-import Image from "next/image";
-import image1 from "@/assets/images/about/comments/22.png";
-import { TiStarFullOutline } from "react-icons/ti";
-import useEmblaCarousel from "embla-carousel-react";
+'use client';
+import { GoCommentDiscussion } from 'react-icons/go';
+import Image from 'next/image';
+import image1 from '@/assets/images/about/comments/22.png';
+import { TiStarFullOutline } from 'react-icons/ti';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const items = [
   {
     id: 1,
     rate: 4,
     image: image1,
-    title: "محسن",
+    title: 'محسن',
     comment:
-      "خوبه دوست دارم کارشون رو خیل رو موارد دیگه تعثییر میزاره ولی خوب نمیشه کقت همیشه هم خوبه.",
+      'خوبه دوست دارم کارشون رو خیل رو موارد دیگه تعثییر میزاره ولی خوب نمیشه کقت همیشه هم خوبه.',
   },
   {
     id: 2,
     rate: 3,
     image: image1,
-    title: "علی",
-    comment: "تجربه خوبی بود، اما می‌تواند بهتر باشد.",
+    title: 'علی',
+    comment: 'تجربه خوبی بود، اما می‌تواند بهتر باشد.',
   },
   {
     id: 3,
     rate: 5,
     image: image1,
-    title: "رضا",
-    comment: "عالی! واقعاً راضی‌ام.",
+    title: 'رضا',
+    comment: 'عالی! واقعاً راضی‌ام.',
   },
   {
     id: 4,
     rate: 2,
     image: image1,
-    title: "نازنین",
-    comment: "چندان راضی نبودم.",
+    title: 'نازنین',
+    comment: 'چندان راضی نبودم.',
   },
   {
     id: 5,
     rate: 2,
     image: image1,
-    title: "نازنین",
-    comment: "چندان راضی نبودم.",
+    title: 'نازنین',
+    comment: 'چندان راضی نبودم.',
   },
   {
     id: 6,
     rate: 2,
     image: image1,
-    title: "نازنین",
-    comment: "چندان راضی نبودم.",
+    title: 'نازنین',
+    comment: 'چندان راضی نبودم.',
   },
 ];
 
 export default function AboutCommentSlider() {
-  const [emblaRef] = useEmblaCarousel();
+  const [emblaRef] = useEmblaCarousel({ loop: true, direction: 'rtl' });
   return (
     <div className="py-5 pb-10 bg-gray-200 dark:bg-slate-800">
       <div className="container mx-auto">
