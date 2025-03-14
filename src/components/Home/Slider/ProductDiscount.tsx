@@ -47,9 +47,10 @@ export default function ProductDiscount() {
     },
   ];
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000 }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, direction: 'rtl' },
+    [Autoplay({ delay: 5000 })]
+  );
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);

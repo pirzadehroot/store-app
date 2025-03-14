@@ -1,5 +1,4 @@
 'use client';
-import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
@@ -17,10 +16,10 @@ const slides = [
 ];
 
 export default function MainBander() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 15000 }),
-    Fade(),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, direction: 'rtl' },
+    [Autoplay({ delay: 15000 }), Fade()]
+  );
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -37,14 +36,6 @@ export default function MainBander() {
     }
   };
 
-  useEffect(() => {
-    if (emblaApi) {
-      emblaApi.on('select', () => {
-        console.log('Current index:', emblaApi.selectedScrollSnap());
-      });
-    }
-  }, [emblaApi]);
-
   return (
     <div className="overflow-hidden relative">
       <div className="overflow-hidden w-full" ref={emblaRef}>
@@ -60,7 +51,6 @@ export default function MainBander() {
                   alt={`Slide ${index + 1}`}
                   priority
                 />
-                {console.log(slide.image.src)}
               </div>
             </div>
           ))}
