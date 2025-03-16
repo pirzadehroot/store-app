@@ -1,49 +1,53 @@
 'use client';
-import Image from 'next/image';
-import productImage from './product-1.jpg';
 import { HiMiniChevronLeft, HiMiniChevronRight } from 'react-icons/hi2';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { EmblaCarouselType } from 'embla-carousel';
 import { DotButton, useDotButton } from './DotButton';
+import HomeProductItem from '../HomeProductItem';
 
 export default function ProductDiscount() {
-  const data = [
+  const discountProduct = [
     {
-      imageUrl: productImage,
+      id: '1',
+      imageUrl:
+        'https://dkstatics-public.digikala.com/digikala-products/715648.jpg',
       title: 'ماشین فلانی بهمانی 12',
       price: 35523000,
-      discount: '55',
-      id: 1,
+      discount: 55,
     },
     {
-      imageUrl: productImage,
+      imageUrl:
+        'https://dkstatics-public.digikala.com/digikala-products/715648.jpg',
       title: 'ماشین فلانی بهمانی 12',
       price: 35523000,
-      discount: '25',
-      id: 2,
+      discount: 25,
+      id: '2',
     },
     {
-      imageUrl: productImage,
+      imageUrl:
+        'https://dkstatics-public.digikala.com/digikala-products/715648.jpg',
       title: 'ماشین فلانی بهمانی 12',
       price: 35523000,
-      discount: '33',
-      id: 3,
+      discount: 33,
+      id: '3',
     },
     {
-      imageUrl: productImage,
+      imageUrl:
+        'https://dkstatics-public.digikala.com/digikala-products/715648.jpg',
       title: 'ماشین فلانی بهمانی 12',
       price: 35523000,
-      discount: '25',
-      id: 4,
+      discount: 25,
+      id: '4',
     },
     {
-      imageUrl: productImage,
+      imageUrl:
+        'https://dkstatics-public.digikala.com/digikala-products/715648.jpg',
       title: 'ماشین فلانی بهمانی 12',
       price: 35523000,
-      discount: '11',
-      id: 5,
+      discount: 11,
+      id: '5',
     },
   ];
 
@@ -81,28 +85,8 @@ export default function ProductDiscount() {
     <div className="overflow-hidden relative">
       <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="flex ">
-          {data.map((productDiscount) => (
-            <div className="relative min-w-full  px-1" key={productDiscount.id}>
-              <div className=" rounded-3xl border-2 border-border bg-bg text-center items-center h-[400px]">
-                <div className="rounded-b-lg py-1 w-3/4 -mt-1 mx-auto bg-red-500 text-white">
-                  {productDiscount?.discount}% تخفیف
-                </div>
-                <Image
-                  src={productDiscount?.imageUrl}
-                  alt={productDiscount?.title}
-                  className="w-full max-w-[220px] h-auto mx-auto my-4 rounded-xl"
-                />
-                <div className="pb-2 text-lg">{productDiscount?.title}</div>
-                <div className="text-lg flex justify-center gap-2 items-center">
-                  تومان
-                  <div className="font-bold text-red-500">
-                    {productDiscount?.price
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                  </div>
-                </div>
-              </div>
-            </div>
+          {discountProduct.map((product) => (
+            <HomeProductItem key={product.id} product={product} />
           ))}
         </div>
       </div>
@@ -126,7 +110,7 @@ export default function ProductDiscount() {
         onClick={onPrevButtonClick}
         disabled={prevBtnDisabled}
       >
-      <HiMiniChevronRight size={30} />
+        <HiMiniChevronRight size={30} />
       </button>
 
       <button

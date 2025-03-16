@@ -66,11 +66,14 @@ export default function FooterBox() {
   ]);
 
   return (
-    <div className="border rounded-xl p-4 bg-bg border-border">
+    <div className="border rounded-xl bg-bg border-border">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {items.map((item) => (
-            <div className="flex-shrink-0  " key={item.id}>
+            <div
+              className="flex-shrink-0 w-[25%] max-lg:w-[30%] max-md:w-[50%] max-sm:w-full flex justify-center p-5"
+              key={item.id}
+            >
               <div className="flex items-center gap-3">
                 <Image
                   src={item.image}
