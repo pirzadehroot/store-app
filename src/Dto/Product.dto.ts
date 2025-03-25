@@ -1,4 +1,4 @@
-export interface AdminProductDto {
+export interface ProductDto {
   id: string;
   image: string;
   title: string;

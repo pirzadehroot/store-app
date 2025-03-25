@@ -1,6 +1,6 @@
 "use client";
 import { useState, useCallback, useRef } from "react";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { GrTechnology } from "react-icons/gr";
 import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
@@ -180,13 +180,6 @@ export default function NavCategory() {
             </div>
           ))}
         </div>
-        <Image
-          src={category?.image}
-          alt={category?.title}
-          width={130}
-          height={80}
-          className="rounded-md"
-        />
       </div>
     );
   }

@@ -3,7 +3,7 @@ import MobileMenu from './MobileMenu';
 import Logo from '../MainHeader/Logo';
 import NavContact from '../Nav/NavContact';
 
-export default function MoblieHeader() {
+export default function MobileHeader() {
   return (
     <section className="sticky max-lg:visible lg:hidden shadow-md bg-bg_low">
       <div className="container mx-auto">

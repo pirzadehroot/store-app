@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { AdminProductDto } from "../dto/adminProduct.dto";
+import { AdminProductDto } from "../../../../Dto/Product.dto";
 
 export default function AdminProduct() {
   const {
