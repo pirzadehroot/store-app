@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import CategoryItem from '../components/category/CategoryItem';
-import DataLoading from '../components/category/DataLoading';
+import DataLoading from '../components/DataLoading';
 import { HiMiniPlus } from 'react-icons/hi2';
 import { useGetCategories } from '../../../hooks/admin/category/useCategoryHooks';
 

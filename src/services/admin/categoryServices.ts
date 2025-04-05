@@ -26,9 +26,7 @@ export const createCategory = async (postData: CategoryDto) => {
 //   return response.data;
 // };
 
-// export const deleteCategory = async (
-//   id: string
-// ): Promise<{ message: string }> => {
-//   const response = await api.delete<{ message: string }>(`${API_URL}/${id}`);
-//   return response.data;
-// };
+export const deleteCategory = async (id: string) => {
+  const response = await api.delete<{ message: string }>(`${API_URL}/${id}`);
+  return response.data;
+};

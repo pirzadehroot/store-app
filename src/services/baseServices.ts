@@ -8,21 +8,24 @@ const api = axios.create({
 });
 
 api.interceptors.response.use(
-  (response) => {
-    return response;
-  },
+  (response) => response,
   (error) => {
     if (error.response) {
-      if (error.response.status === 404) {
+      const status = error.response.status;
+      const message = error.response.data?.message;
+
+      if (status === 404) {
         toast.warning('صفحه یافت نشد!');
-      } else if (error.response.status === 500) {
+      } else if (status === 500) {
         toast.error('خطای سرور!');
       } else {
-        toast.error('خطای دیگری رخ داده است!');
+        toast.error(message || 'خطایی رخ داده است.');
       }
     } else {
-      toast.error('مشکل در ارتباط با سرور');
+      toast.error('مشکل ارتباط با سرور');
     }
+
+    return Promise.reject(error);
   }
 );
 

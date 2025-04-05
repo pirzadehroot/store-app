@@ -1,89 +1,23 @@
-"use client";
-import { useState, useCallback, useRef } from "react";
-import { StaticImageData } from "next/image";
-import { GrTechnology } from "react-icons/gr";
-import { FaAngleLeft } from "react-icons/fa";
-import Link from "next/link";
-import image_src from "@/assets/images/headerCategory/mega-banner-1.png";
-import { BiSolidCategory } from "react-icons/bi";
+'use client';
+import { useState, useCallback, useRef } from 'react';
+import { StaticImageData } from 'next/image';
+import { GrTechnology } from 'react-icons/gr';
+import { FaAngleLeft } from 'react-icons/fa';
+import Link from 'next/link';
+import image_src from '@/assets/images/headerCategory/mega-banner-1.png';
+import { BiCategory } from 'react-icons/bi';
 
 const categories = [
   {
-    title: "مد و پوشاک",
-    url: "/",
-    icon: <GrTechnology size={20} className="ml-2" />,
-    image: image_src,
+    title: 'مد و پوشاک',
+    url: '/',
     subcategories: [
       {
-        title: "دسته‌بندی مد و پوشاک",
+        title: 'دسته‌بندی مد و پوشاک',
         items: [
-          { title: "کفش", url: "/shoes" },
-          { title: "پیراهن", url: "/shirt" },
-          { title: "کت و شلوار", url: "/suit" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "مد و پوشاک",
-    url: "/",
-    icon: <GrTechnology size={20} className="ml-2" />,
-    image: image_src,
-    subcategories: [
-      {
-        title: "دسته‌بندی مد و پوشاک",
-        items: [
-          { title: "کفش", url: "/shoes" },
-          { title: "پیراهن", url: "/shirt" },
-          { title: "کت و شلوار", url: "/suit" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "مد و پوشاک",
-    url: "/",
-    icon: <GrTechnology size={20} className="ml-2" />,
-    image: image_src,
-    subcategories: [
-      {
-        title: "دسته‌بندی مد و پوشاک",
-        items: [
-          { title: "کفش", url: "/shoes" },
-          { title: "پیراهن", url: "/shirt" },
-          { title: "کت و شلوار", url: "/suit" },
-        ],
-      },
-    ],
-  },
-  {
-    title: "مد و پوشاک",
-    url: "/",
-    icon: <GrTechnology size={20} className="ml-2" />,
-    image: image_src,
-    subcategories: [
-      {
-        title: "دسته‌بندی مد و پوشاک",
-        items: [
-          { title: "کفش", url: "/shoes" },
-          { title: "پیراهن", url: "/shirt" },
-          { title: "کت و شلوار", url: "/suit" },
-        ],
-      },
-      {
-        title: "دسته‌بندی مد و پوشاک",
-        items: [
-          { title: "کفش", url: "/shoes" },
-          { title: "پیراهن", url: "/shirt" },
-          { title: "کت و شلوار", url: "/suit" },
-        ],
-      },
-      {
-        title: "دسته‌بندی مد و پوشاک",
-        items: [
-          { title: "کفش", url: "/shoes" },
-          { title: "پیراهن", url: "/shirt" },
-          { title: "کت و شلوار", url: "/suit" },
+          { title: 'کفش', url: '/shoes' },
+          { title: 'پیراهن', url: '/shirt' },
+          { title: 'کت و شلوار', url: '/suit' },
         ],
       },
     ],
@@ -93,8 +27,6 @@ const categories = [
 interface ICategoryLinkType {
   title: string;
   url: string;
-  icon: React.ReactNode;
-  image: StaticImageData;
   subcategories: ISubCategoryLinkType[];
 }
 
@@ -107,7 +39,7 @@ export default function NavCategory() {
   const [openCategory, setOpenCategory] = useState<number | null>(null);
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
   const menuTimeout = useRef<NodeJS.Timeout | null>(null);
-  const [anime_revers, setAnime_revers] = useState<string>("");
+  const [anime_revers, setAnime_revers] = useState<string>('');
 
   const handleMouseEnter = useCallback(() => {
     if (menuTimeout.current) clearTimeout(menuTimeout.current);
@@ -115,7 +47,7 @@ export default function NavCategory() {
   }, []);
 
   const handleMouseLeave = useCallback(() => {
-    setAnime_revers("");
+    setAnime_revers('');
     menuTimeout.current = setTimeout(() => {
       setMenuOpen(false);
     }, 300);
@@ -136,8 +68,8 @@ export default function NavCategory() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={`absolute right-0 rounded-b-xl shadow-xl bg-card border-x border-b border-border w-52 z-10 transition-all duration-300 ${
-          anime_revers != "" ? anime_revers.toString : ""
-        } ${isMenuOpen ? "visible animate-fade-down" : "hidden"}`}
+          anime_revers != '' ? anime_revers.toString : ''
+        } ${isMenuOpen ? 'visible animate-fade-down' : 'hidden'}`}
       >
         <ul className="flex flex-col gap-2 relative">
           {categories.map((category, index) => (
@@ -191,7 +123,6 @@ export default function NavCategory() {
         className="flex justify-between p-3 group hover:bg-bg_hover_low rounded-md text-gray-750 duration-300"
       >
         <div className="flex items-center">
-          {icon}
           <span>{title}</span>
         </div>
         <FaAngleLeft
@@ -209,7 +140,7 @@ export default function NavCategory() {
         onMouseLeave={handleMouseLeave}
         className="flex cursor-pointer items-center py-2 gap-2"
       >
-        <BiSolidCategory size={24} />
+        <BiCategory size={24} />
         <span>دسته‌بندی کالا‌ها</span>
       </div>
     );

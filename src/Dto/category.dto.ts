@@ -5,5 +5,6 @@ export interface CategoryDto {
   isDeleted: boolean;
   created_at: string;
   updated_at: string;
-  childrenCategory?: CategoryDto | null;
+  parentCategoryId?: string | undefined;
+  parentCategory?: CategoryDto | null;
 }
