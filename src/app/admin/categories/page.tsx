@@ -4,13 +4,16 @@ import CategoryItem from '../components/category/CategoryItem';
 import DataLoading from '../components/DataLoading';
 import { HiMiniPlus } from 'react-icons/hi2';
 import { useGetCategories } from '../../../hooks/admin/category/useCategoryHooks';
+import CategorySearch from '../components/category/CategorySearch';
 
 export default function Categories() {
   const { data: categories, isLoading } = useGetCategories();
+  console.log(23333, categories);
 
   return (
     <div className="space-y-3">
       <div className="flex">
+        <CategorySearch />
         <Link
           href="/admin/categories/add"
           className="flex items-center bg-green-500 p-2 text-white rounded-lg"

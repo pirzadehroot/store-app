@@ -5,6 +5,7 @@ const API_URL = 'admin/categories';
 
 export const getCategories = async () => {
   const { data } = await api.get(API_URL);
+  console.log(12,data)
   return data;
 };
 
