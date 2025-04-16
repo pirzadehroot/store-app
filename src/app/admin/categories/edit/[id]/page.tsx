@@ -1,34 +1,56 @@
 'use client';
-import { useForm } from 'react-hook-form';
-import { CategoryDto } from '../../../../Dto/category.dto';
 import {
-  useCreateCategory,
   useGetCategories,
-} from '../../../../hooks/admin/category/useCategoryHooks';
+  useGetOneCategory,
+  useUpdateCategory,
+} from '../../../../../hooks/admin/category/useCategoryHooks';
+import { CategoryDto } from '../../../../../Dto/category.dto';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
-import ErrorMessage from '../../components/ErrorMessage';
+import ErrorMessage from '../../../components/ErrorMessage';
+import { useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 
-export default function AddNewCategory() {
-  const { mutate } = useCreateCategory();
+export default function EditCategory() {
+  const { id } = useParams()
+  const { data: editCategory } = useGetOneCategory(id as string);
+  const { mutate } = useUpdateCategory();
   const { data: allCategories } = useGetCategories();
-  const router = useRouter();
+  const router = useRouter()
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
+    reset,
   } = useForm<CategoryDto>();
 
+  useEffect(() => {
+    if (editCategory) {
+      reset({
+        title: editCategory.title,
+        slug: editCategory.slug,
+        parentCategoryId: editCategory.parentCategoryId || '',
+      });
+    }
+  }, [editCategory, reset]);
+
   const onSubmit = (data: CategoryDto) => {
-    mutate(data, {
-      onSuccess: () => {
-        reset();
-        toast.success('دسته بندی اضافه شد.');
-        router.push('/admin/categories');
-      },
-    });
+    if (!editCategory?.id) return;
+    const category = { ...data, id: id as string }
+    mutate(
+      category,
+      {
+        onSuccess: () => {
+          toast.success('دسته بندی ویرایش شد.');
+          router.push('/admin/categories');
+        },
+      }
+    );
   };
+
+  if (!editCategory) {
+    return <div>در حال بارگذاری...</div>;
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -63,7 +85,6 @@ export default function AddNewCategory() {
             className="outline-none border-2 border-border bg-bg rounded-lg p-2 focus:border-blue-500"
           />
         </label>
-
       </div>
 
       <select
@@ -71,18 +92,18 @@ export default function AddNewCategory() {
         className="flex my-2 outline-none border-2 border-border bg-bg rounded-lg p-2 focus:border-blue-500"
       >
         <option value={''}>دسته‌بندی پدر</option>
-        {allCategories?.map((CategoryItem) => (
-          <option key={CategoryItem.id} value={CategoryItem.id}>
-            {CategoryItem.title}
+        {allCategories?.map((categoryItem) => (
+          <option key={categoryItem.id} value={categoryItem.id}>
+            {categoryItem.title}
           </option>
         ))}
       </select>
 
       <button
-        className="bg-green-500 rounded-lg active:scale-95 p-2 mt-4 text-white hover:bg-green-600"
+        className="bg-yellow-500 rounded-lg active:scale-95 p-2 mt-4 text-white"
         type="submit"
       >
-        افزودن
+        ویرایش
       </button>
     </form>
   );

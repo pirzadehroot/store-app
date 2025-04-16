@@ -15,7 +15,7 @@ api.interceptors.response.use(
       const message = error.response.data?.message;
 
       if (status === 404) {
-        toast.warning('صفحه یافت نشد!');
+        toast.warning('سرویسی پیدا نشد!');
       } else if (status === 500) {
         toast.error('خطای سرور!');
       } else {

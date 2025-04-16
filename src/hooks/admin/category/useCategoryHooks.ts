@@ -6,6 +6,8 @@ import {
   getCategories,
   getOneCategory,
   deleteCategory,
+  setMode,
+  updateCategory,
 } from '../../../services/admin/categoryServices';
 import { CategoryDto } from '../../../Dto/category.dto';
 
@@ -30,6 +32,22 @@ export const useGetOneCategory = (id: string) => {
 export const useCreateCategory = () => {
   const { mutate, isError, isSuccess, reset } = useMutation({
     mutationFn: (category: CategoryDto) => createCategory(category),
+  });
+
+  return { mutate, isError, isSuccess, reset };
+};
+
+export const useUpdateCategory = () => {
+  const { mutate, isError, isSuccess, reset, error } = useMutation({
+    mutationFn: (category: CategoryDto) => updateCategory(category),
+  });
+
+  return { mutate, isError, isSuccess, reset, error };
+};
+
+export const useSetModeCategory = () => {
+  const { mutate, isError, isSuccess, reset } = useMutation({
+    mutationFn: (id: string) => setMode(id),
   });
 
   return { mutate, isError, isSuccess, reset };

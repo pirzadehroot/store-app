@@ -3,11 +3,9 @@ import { RiSearch2Line } from 'react-icons/ri';
 
 export default function CategorySearch() {
   return (
-    <label className="flex gap-3">
-      <input type="search" className="bg-bg_low rounded-lg p-2" />
-      <button type="submit" className="rounded-lg bg-bg_low">
-        <RiSearch2Line />
-      </button>
-    </label>
+    <form className="flex bg-bg rounded-lg items-center p-1 border border-border">
+      <input type="search" className="bg-bg rounded-lg outline-none p-1 " placeholder={'جست و جو'} />
+      <RiSearch2Line size={20} />
+    </form>
   );
 }
