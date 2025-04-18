@@ -12,7 +12,7 @@ export default function Categories() {
 
   return (
     <div className="space-y-5">
-      <AddNewCategory />
+      {/* <AddNewCategory /> */}
 
       <div>
         {isLoading ? (

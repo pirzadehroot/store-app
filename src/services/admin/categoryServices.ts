@@ -1,7 +1,17 @@
 import { CategoryDto } from '../../Dto/category.dto';
 import api from '../baseServices';
+import { apiFetch } from '../baseServicesFetch';
 
 const API_URL = 'admin/categories';
+
+// this just for test
+export const getCategoriesFetch = () => apiFetch(API_URL);
+export const createCategoryFetch = (data: CategoryDto[]) =>
+  apiFetch('categories', {
+    method: 'POST',
+    body: data,
+  });
+//////////////////////////
 
 export const getCategories = async () => {
   const response = await api.get(API_URL);

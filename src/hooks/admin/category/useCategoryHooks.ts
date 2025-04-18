@@ -8,13 +8,14 @@ import {
   deleteCategory,
   setMode,
   updateCategory,
+  getCategoriesFetch,
 } from '../../../services/admin/categoryServices';
 import { CategoryDto } from '../../../Dto/category.dto';
 
 export const useGetCategories = () => {
   const { data, isLoading, isError, error } = useQuery<CategoryDto[]>({
     queryKey: ['Categories'],
-    queryFn: getCategories,
+    queryFn: getCategoriesFetch,
   });
 
   return { data, isLoading, isError, error };
