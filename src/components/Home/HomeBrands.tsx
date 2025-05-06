@@ -53,42 +53,42 @@ const brands = [
     alt: 'brand 8',
   },
   {
-    id: '1',
+    id: '9',
     imgUrl: brand_img1,
     alt: 'brand 1',
   },
   {
-    id: '2',
+    id: '10',
     imgUrl: brand_img2,
     alt: 'brand 2',
   },
   {
-    id: '3',
+    id: '11',
     imgUrl: brand_img3,
     alt: 'brand 3',
   },
   {
-    id: '4',
+    id: '12',
     imgUrl: brand_img4,
     alt: 'brand 4',
   },
   {
-    id: '5',
+    id: '13',
     imgUrl: brand_img5,
     alt: 'brand 5',
   },
   {
-    id: '6',
+    id: '14',
     imgUrl: brand_img6,
     alt: 'brand 6',
   },
   {
-    id: '7',
+    id: '15',
     imgUrl: brand_img7,
     alt: 'brand 7',
   },
   {
-    id: '8',
+    id: '16',
     imgUrl: brand_img8,
     alt: 'brand 8',
   },
@@ -105,10 +105,10 @@ export default function HomeBrands() {
         <div className="flex gap-5">
           {brands.map((brand) => (
             <Image
+              key={brand.id}
               className="p-3 border-2 border-border rounded-lg"
               src={brand.imgUrl}
               alt={brand.alt}
-              key={brand.id}
               width={160}
               height={160}
             />

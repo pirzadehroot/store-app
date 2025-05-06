@@ -37,7 +37,7 @@ export default function DelCategory({ id }: DelCategoryProps) {
     if (result.isConfirmed) {
       mutate(id, {
         onSuccess: () => {
-          queryClient.invalidateQueries(['categories']);
+          queryClient.invalidateQueries({ queryKey: ['categories'] });
           toast.success('دسته‌بندی با موفقیت حذف شد');
         },
       });
@@ -47,12 +47,9 @@ export default function DelCategory({ id }: DelCategoryProps) {
   return (
     <button
       onClick={delHandler}
-      className="bg-bg border border-border rounded-lg active:scale-95"
+      className="bg-red-500 dark:bg-red-900 dark:border-red-500 border-2 border-border rounded-lg active:scale-95"
     >
-      <HiOutlineTrash
-        size={30}
-        className="bg-red-500 rounded-lg p-1 text-white"
-      />
+      <HiOutlineTrash size={30} className="p-1 text-white" />
     </button>
   );
 }

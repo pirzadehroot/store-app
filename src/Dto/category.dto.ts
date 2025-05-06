@@ -2,6 +2,7 @@ export interface CategoryDto {
   id: string;
   title: string;
   slug: string;
+  imageUrl?: string;
   isShowing: boolean;
   isDeleted: boolean;
   created_at: string;

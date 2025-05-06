@@ -1,9 +1,7 @@
 'use client';
-
 import { useMutation, useQuery } from '@tanstack/react-query';
 import {
   createCategory,
-  getCategories,
   getOneCategory,
   deleteCategory,
   setMode,
@@ -14,7 +12,7 @@ import { CategoryDto } from '../../../Dto/category.dto';
 
 export const useGetCategories = () => {
   const { data, isLoading, isError, error } = useQuery<CategoryDto[]>({
-    queryKey: ['Categories'],
+    queryKey: ['categories'],
     queryFn: getCategoriesFetch,
   });
 
@@ -33,8 +31,8 @@ export const useGetOneCategory = (id: string) => {
 export const useCreateCategory = () => {
   const { mutate, isError, isSuccess, reset } = useMutation({
     mutationFn: (category: CategoryDto) => createCategory(category),
+    mutationKey: ['createCategory'],
   });
-
   return { mutate, isError, isSuccess, reset };
 };
 

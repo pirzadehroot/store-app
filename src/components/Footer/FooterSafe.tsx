@@ -16,7 +16,7 @@ export default function FooterSafe() {
       <p className="text-gray-400">
         <span>برنامه‌نویس و طراح سایت </span>
         <Link
-          href="https://sinapirzadeh.ir/"
+          href="https://pir.liara.run/"
           className="text-gray-400 hover:text-blue-500 hover:underline transition-colors duration-200"
           aria-label="وب‌سایت سینا پیرزاده"
         >
