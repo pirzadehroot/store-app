@@ -94,7 +94,7 @@ const CheckboxFilter = ({
 };
 
 const filterSections: FilterDto[] = [
-  { key: 'price', title: 'حجم کالا', type: 'range' },
+  { key: 'price', title: 'قیمت کالا', type: 'range' },
   {
     key: 'category',
     title: 'دسته بندی',

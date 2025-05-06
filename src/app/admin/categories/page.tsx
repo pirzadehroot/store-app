@@ -2,10 +2,9 @@
 import DataLoading from '../components/Loading';
 import CategoryItemVertical from '../components/category/CategoryItem';
 import { useGetCategories } from '@/hooks/admin/category/useCategoryHooks';
-import { TbAlertSquare } from 'react-icons/tb';
 import { AddNewCategory } from '../components/category/AddCategory';
 
-export default function Categories() {
+export default function AdminCategories() {
   const { data: categories, isLoading } = useGetCategories();
 
   return (

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { RiHome2Line } from 'react-icons/ri';
+import { RiHome9Line } from 'react-icons/ri';
 
 interface RouterDto {
   route_link: string;
@@ -14,7 +14,7 @@ export default function PageRouter({ routerList }: PageRouterProps) {
   return (
     <div className="flex pb-5 text-sm items-center text-gray-400">
       <Link href="/">
-        <RiHome2Line size={20} />
+        <RiHome9Line size={20} />
       </Link>
       {routerList &&
         routerList.map((route, index) => (

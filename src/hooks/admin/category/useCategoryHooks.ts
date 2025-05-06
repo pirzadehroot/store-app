@@ -36,12 +36,12 @@ export const useCreateCategory = () => {
   return { mutate, isError, isSuccess, reset };
 };
 
-export const useUpdateCategory = () => {
-  const { mutate, isError, isSuccess, reset, error } = useMutation({
-    mutationFn: (category: CategoryDto) => updateCategory(category),
+export const useUpdateCategory = (id: string) => {
+  const { mutate, isPending, isError, isSuccess, reset, error } = useMutation({
+    mutationFn: (category: CategoryDto) => updateCategory(id, category),
   });
 
-  return { mutate, isError, isSuccess, reset, error };
+  return { mutate, isPending, isError, isSuccess, reset, error };
 };
 
 export const useSetModeCategory = () => {

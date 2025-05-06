@@ -22,9 +22,9 @@ export const createCategory = async (postData: CategoryDto) => {
   return response.data; 
 };
 
-export const updateCategory = async (postData: CategoryDto) => {
+export const updateCategory = async (id: string ,postData: CategoryDto) => {
   const response = await api.patch<CategoryDto>(
-    `${API_URL}/${postData.id}`,
+    `${API_URL}/${id}`,
     postData
   );
   return response.data;

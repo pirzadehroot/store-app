@@ -16,7 +16,7 @@ import { BiMessageSquareEdit } from 'react-icons/bi';
 export default function EditCategory() {
   const { id } = useParams();
   const { data: editCategory } = useGetOneCategory(id as string);
-  const { mutate, isLoading: isUpdating } = useUpdateCategory();
+  const { mutate, isPending: isUpdating } = useUpdateCategory(id as string);
   const { data: allCategories } = useGetCategories();
   const router = useRouter();
 
@@ -38,13 +38,6 @@ export default function EditCategory() {
   }, [editCategory, reset]);
 
   const onSubmit = (data: CategoryDto) => {
-    if (!editCategory?.id) return;
-
-    // اگر هیچ دسته پدری انتخاب نشده باشد، مقدار را undefined کنیم
-    if (data.parentCategoryId === '') {
-      data.parentCategoryId = undefined;
-    }
-
     mutate(data, {
       onSuccess: () => {
         router.push('/admin/categories');
@@ -59,13 +52,9 @@ export default function EditCategory() {
     return <Loading />;
   }
 
-  const parent = allCategories.find(
-    (c) => c.id === editCategory.parentCategoryId
-  );
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2 className="text-xl pb-3 flex gap-3 items  ">
+      <h2 className="text-xl pb-5 flex gap-3 items-center ">
         <BiMessageSquareEdit size={40} />
         ویرایش دسته بندی
       </h2>
@@ -102,18 +91,16 @@ export default function EditCategory() {
         </label>
       </div>
 
-      <p className="mt-3">
-        دسته‌بندی فعلی پدر : {editCategory ? editCategory.title : 'ندارد'}
-      </p>
-
       <select
         {...register('parentCategoryId')}
         className="flex my-2 outline-none border-2 border-border bg-bg rounded-lg p-2 focus:border-blue-500"
       >
-        {editCategory && (
-          <option value={editCategory.id}>بدون دسته‌بندی پدر</option>
-        )}
         <option value={''}>بدون دسته‌بندی پدر</option>
+        {editCategory.parentCategory && (
+          <option value={editCategory.id}>
+            {editCategory.parentCategory?.title}
+          </option>
+        )}
         {allCategories
           .filter((categoryItem) => categoryItem.id !== editCategory.id)
           .map((categoryItem) => (

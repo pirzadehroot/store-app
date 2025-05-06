@@ -1,18 +1,14 @@
-import Link from 'next/link';
-import type { Metadata } from 'next';
-import ShopFilter from '@/components/Shop/filters/ProductTopFilter';
+import PageRouter from '@/components/Router/PageRouter';
 import ProductFilter from '@/components/Shop/filters/ProductFilter';
 import ShopPagination from '@/components/Shop/ShopPagination';
-import PageRouter from '@/components/Router/PageRouter';
-import { ProductDto } from '@/components/Product/dto/product.dto';
-import ProductItem from '@/components/Product/ProductItem';
+import ShopFilter from '@/components/Shop/filters/ProductTopFilter';
 
 export const metadata: Metadata = {
-  title: 'فروشگاه',
+  title: 'دسته بندی فلان',
   description: 'صفحه محصولات فروشگاه',
 };
 
-export default async function Shop() {
+export default function Categories() {
   return (
     <div className="container mx-auto py-8">
       <PageRouter
@@ -30,14 +26,14 @@ export default async function Shop() {
           </div>
           <div className="grid grid-cols-4 gap-10 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1">
             {/* {products &&
-              products.map((product, index) => (
-                <Link
-                  href={`shop/${product.category.slug}/${product.slug}`}
-                  key={index}
-                >
-                  <ProductItem {...product} />
-                </Link>
-              ))} */}
+                products.map((product, index) => (
+                  <Link
+                    href={`shop/${product.category.slug}/${product.slug}`}
+                    key={index}
+                  >
+                    <ProductItem {...product} />
+                  </Link>
+                ))} */}
           </div>
           <ShopPagination />
         </div>

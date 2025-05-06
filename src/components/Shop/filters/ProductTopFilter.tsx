@@ -13,6 +13,13 @@ export default function ProductTopFilter() {
       <label className="cursor-pointer">
         <input type="radio" name="filter" className="peer hidden" />
         <span className="hover:text-red-500 peer-checked:text-red-500 text-sm">
+          همه
+        </span>
+      </label>
+
+      <label className="cursor-pointer">
+        <input type="radio" name="filter" className="peer hidden" />
+        <span className="hover:text-red-500 peer-checked:text-red-500 text-sm">
           کمترین قیمت
         </span>
       </label>

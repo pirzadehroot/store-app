@@ -9,7 +9,7 @@ export default function NavContact() {
         <span className="text-red-500 flex">۰۲۱</span>
       </span>
       <Link href={"tel:43625743"}>
-        <TbPhoneCall size={27} className="p-1 rounded-full bg-bg max-lg:p-0" />
+        <TbPhoneCall size={27} className="p-1 border border-border rounded-full bg-bg max-lg:p-0" />
       </Link>
     </div>
   );
