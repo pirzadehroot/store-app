@@ -42,42 +42,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="fa"
-      dir="rtl"
-      suppressHydrationWarning
-    >
+    <html lang="fa" dir="rtl" suppressHydrationWarning>
       <head>
         <ThemeScript />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="font-Vazir bg-bg text-base text-text scroll-smooth antialiased">
-          <NextTopLoader color="#ef4444" height={3} showSpinner={false} />
+        <NextTopLoader color="#ef4444" height={3} showSpinner={false} />
 
-          <ReactQueryProvider>
-            <Header />
+        <ReactQueryProvider>
+          <Header />
 
-            <main className="min-h-[calc(100vh-160px)]">{children}</main>
+          <main className="min-h-[calc(100vh-160px)]">{children}</main>
 
-            <Footer />
-          </ReactQueryProvider>
+          <Footer />
+        </ReactQueryProvider>
 
-          <ToastContainer
-            rtl
-            position="top-left"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="colored"
-            toastClassName="font-sans font-bold bg-bg_low text-text"
-          />
+        <ToastContainer
+          rtl
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          toastClassName="font-sans font-bold bg-bg_low text-text"
+        />
       </body>
     </html>
   );

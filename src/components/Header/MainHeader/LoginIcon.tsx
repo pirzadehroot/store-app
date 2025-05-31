@@ -1,16 +1,29 @@
-import Link from "next/link";
-import { AiOutlineUser } from "react-icons/ai";
+'use client';
+import { useAuthStore } from '@/store/useAuthStore';
+import Link from 'next/link';
+import { AiOutlineUser } from 'react-icons/ai';
+import { LuUser } from 'react-icons/lu';
 
 export default function LoginIcon() {
+  const user = useAuthStore((state) => state.user);
   return (
     <div>
-      <Link
-        href={"/login"}
-        className="flex items-center gap-2 hover:text-hover_low transition-colors"
-      >
-        <AiOutlineUser size={30} />
-        <span>ورود / عضویت </span>
-      </Link>
+      {user ? (
+        <Link
+          href={user.isAdmin ? '/admin/dashboard' : "/profile"}
+          className="flex items-center gap-2 hover:text-hover_low transition-colors"
+        >
+          <LuUser size={30} />
+        </Link>
+      ) : (
+        <Link
+          href={'/login'}
+          className="flex items-center gap-2 hover:text-hover_low transition-colors"
+        >
+          <AiOutlineUser size={30} />
+          <span>ورود / عضویت </span>
+        </Link>
+      )}
     </div>
   );
 }

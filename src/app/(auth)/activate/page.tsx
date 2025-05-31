@@ -7,8 +7,7 @@ import { toast } from 'react-toastify';
 export default function ActiveAccount() {
   const params = useSearchParams();
   const router = useRouter();
-  const token = params.get('token');
-  console.log(token);
+  const token = params.get('Token');
   const { mutate } = useActive();
 
   useEffect(() => {

@@ -43,7 +43,7 @@ const items = [
   },
 ];
 
-export default function AdminNavBar() {
+export default function AdminNavBar(admin: any) {
   const pathName = usePathname();
 
   return (
@@ -51,7 +51,7 @@ export default function AdminNavBar() {
       <div className="py-3 px-1.5 rounded-lg border-border border-2 flex items-center justify-between">
         <h1 className="text-xl font-bold flex items-center gap-2">
           <RiSettingsLine size={23} />
-          پنل مدیریت
+          {admin?.email}
         </h1>
         <span className="flex items-center gap-2 text-sm  ">
           <HiOutlineBellAlert size={23} />
