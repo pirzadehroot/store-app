@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import { useForm } from "react-hook-form";
+import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
 
 interface IPasswrodType {
   re_password: string;
@@ -11,7 +11,7 @@ interface IPasswrodType {
 export default function Register() {
   const { register, errors, handleSubmit, watch } = useForm<IPasswrodType>({});
   const password = useRef({});
-  password.current = watch("password", "");
+  password.current = watch('password', '');
   const onSubmit = async (data) => {
     alert(JSON.stringify(data));
   };
@@ -19,11 +19,11 @@ export default function Register() {
   return (
     <form className="grid space-y-5" onSubmit={onSubmit(userRegister)}>
       <input
-        {...register("password", {
-          required: "رمز عبور الزامی است",
+        {...register('password', {
+          required: 'رمز عبور الزامی است',
           minLength: {
             value: 8,
-            message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
+            message: 'رمز عبور باید حداقل ۸ کاراکتر باشد',
           },
         })}
         className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
@@ -35,14 +35,14 @@ export default function Register() {
       )}
 
       <input
-        {...register("re_password", {
-          required: "رمز عبور الزامی است",
+        {...register('re_password', {
+          required: 'رمز عبور الزامی است',
           minLength: {
             value: 8,
-            message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
+            message: 'رمز عبور باید حداقل ۸ کاراکتر باشد',
           },
           validate: (value) =>
-            value === password.current || "The passwords do not match",
+            value === password.current || 'The passwords do not match',
         })}
         className="outline-none bg-transparent border text-gray-500 rounded-lg p-2 bg-white dark:bg-gray-850 dark:text-gray-100 dark:placeholder:text-gray-300 dark:border-gray-500"
         type="password"
@@ -58,6 +58,7 @@ export default function Register() {
       >
         تغییر رمز عبور
       </button>
+      
     </form>
   );
 }

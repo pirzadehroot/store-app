@@ -2,6 +2,7 @@ import PageRouter from '@/components/Router/PageRouter';
 import ProductFilter from '@/components/Shop/filters/ProductFilter';
 import ShopPagination from '@/components/Shop/ShopPagination';
 import ShopFilter from '@/components/Shop/filters/ProductTopFilter';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'دسته بندی فلان',

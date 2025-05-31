@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Vazirmatn } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

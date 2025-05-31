@@ -1,11 +1,8 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import ShopFilter from '@/components/Shop/filters/ProductTopFilter';
 import ProductFilter from '@/components/Shop/filters/ProductFilter';
 import ShopPagination from '@/components/Shop/ShopPagination';
 import PageRouter from '@/components/Router/PageRouter';
-import { ProductDto } from '@/components/Product/dto/product.dto';
-import ProductItem from '@/components/Product/ProductItem';
 
 export const metadata: Metadata = {
   title: 'فروشگاه',

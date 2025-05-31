@@ -1,33 +1,53 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useForm } from "react-hook-form";
-import { HiMiniDevicePhoneMobile } from "react-icons/hi2";
+import { useRegister } from '@/hooks/auth/useAuthHooks';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { HiMiniDevicePhoneMobile } from 'react-icons/hi2';
+import { LuUser } from 'react-icons/lu';
+import { toast } from 'react-toastify';
 
-interface IUserRegister {
+export interface UserRegisterDto {
   email: string;
-  name: string;
   password: string;
 }
 
 export default function Register() {
+  const { mutate } = useRegister();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IUserRegister>({
+    reset,
+  } = useForm<UserRegisterDto>({
     defaultValues: {
-      name: "",
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
   });
 
-  const userRegister = (data: IUserRegister) => {};
+  const userRegister = (data: UserRegisterDto) => {
+    mutate(data, {
+      onSuccess: () => {
+        reset();
+        toast.success('حساب کاربری ایجاد شد.');
+        router.push('/login');
+      },
+      onError: () => {
+        reset();
+      },
+    });
+  };
 
   return (
     <>
-      <Link
+      <h2 className="my-7 text-2xl flex gap-2 justify-center">
+        <LuUser size={35} />
+        ورود به سایت
+      </h2>
+      {/* <Link
         href="/login-phone"
         className="inline-block gap-2 my-3 hover:text-blue-500 transition-colors"
         aria-label="ورود با شماره موبایل"
@@ -36,37 +56,15 @@ export default function Register() {
           <HiMiniDevicePhoneMobile size={22} />
           ورود با شماره مبایل
         </span>
-      </Link>
+      </Link> */}
 
       <form className="grid space-y-5" onSubmit={handleSubmit(userRegister)}>
         <input
-          {...register("name", {
-            required: "نام الزامی است",
-            minLength: {
-              value: 3,
-              message: "نام باید حداقل ۳ کاراکتر باشد",
-            },
-            maxLength: {
-              value: 30,
-              message: "نام نمی‌تواند بیشتر از ۳۰ کاراکتر باشد",
-            },
-          })}
-          className="outline-none border rounded-lg p-2 bg-bg border-border"
-          type="text"
-          placeholder="نام"
-        />
-        {errors.name && (
-          <span className="text-red-500 text-sm">
-            {errors.name.message as string}
-          </span>
-        )}
-
-        <input
-          {...register("email", {
-            required: "ایمیل الزامی است",
+          {...register('email', {
+            required: 'ایمیل الزامی است',
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: "ایمیل معتبر نیست",
+              message: 'ایمیل معتبر نیست',
             },
           })}
           className="outline-none border rounded-lg p-2 bg-bg border-border"
@@ -80,11 +78,11 @@ export default function Register() {
         )}
 
         <input
-          {...register("password", {
-            required: "رمز عبور الزامی است",
+          {...register('password', {
+            required: 'رمز عبور الزامی است',
             minLength: {
               value: 8,
-              message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
+              message: 'رمز عبور باید حداقل ۸ کاراکتر باشد',
             },
           })}
           className="outline-none border rounded-lg p-2 bg-bg border-border"
@@ -105,7 +103,7 @@ export default function Register() {
         </button>
 
         <span className="text-gray-500 dark:text-gray-300 text-sm">
-          از قبل حساب کاربری دارید؟{" "}
+          از قبل حساب کاربری دارید؟{' '}
           <Link
             href="/login"
             className="text-blue-600 dark:text-blue-500 hover:underline"

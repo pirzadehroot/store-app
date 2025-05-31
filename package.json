@@ -21,6 +21,7 @@
     "embla-carousel-autoplay": "8.5.2",
     "embla-carousel-fade": "8.5.2",
     "embla-carousel-react": "8.5.2",
+    "js-cookie": "3.0.5",
     "next": "14.2.24",
     "nextjs-toploader": "3.7.15",
     "pnpm": "10.7.0",

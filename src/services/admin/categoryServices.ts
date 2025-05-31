@@ -19,14 +19,11 @@ export const getOneCategory = async (id: string): Promise<CategoryDto> => {
 
 export const createCategory = async (postData: CategoryDto) => {
   const response = await api.post<CategoryDto>(API_URL, postData);
-  return response.data; 
+  return response.data;
 };
 
-export const updateCategory = async (id: string ,postData: CategoryDto) => {
-  const response = await api.patch<CategoryDto>(
-    `${API_URL}/${id}`,
-    postData
-  );
+export const updateCategory = async (id: string, postData: CategoryDto) => {
+  const response = await api.patch<CategoryDto>(`${API_URL}/${id}`, postData);
   return response.data;
 };
 
