@@ -7,6 +7,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import ReactQueryProvider from '../components/ReactQueryProvider';
 import ThemeScript from '@/components/Header/MainHeader/ThemeScript';
+import ClientOnly from '@/components/ClientOnly';
 
 export const metadata: Metadata = {
   title: {
@@ -50,7 +51,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className="font-Vazir bg-bg text-base text-text scroll-smooth antialiased">
-        <NextTopLoader color="#ef4444" height={3} showSpinner={false} />
+        <ClientOnly>
+          <NextTopLoader color="#ef4444" height={3} showSpinner={false} />
+        </ClientOnly>
 
         <ReactQueryProvider>
           <Header />

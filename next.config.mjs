@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['dkstatics-public.digikala.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'dkstatics-public.digikala.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

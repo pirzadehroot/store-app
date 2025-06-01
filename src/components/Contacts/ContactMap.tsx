@@ -1,5 +1,4 @@
-import ContactInformations from "./ContactInformations";
-import NeshanMap from "../../utils/maps/NeshanMap";
+import ContactInformations from './ContactInformations';
 
 export default function ContactMap() {
   return (
@@ -9,7 +8,7 @@ export default function ContactMap() {
           <ContactInformations />
         </div>
         <div className="col-span-8 max-lg:col-span-12">
-          <NeshanMap />
+          {/* <NeshanMap /> */}
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 import { useAuthStore } from '@/store/useAuthStore';
 import Link from 'next/link';
 import { AiOutlineUser } from 'react-icons/ai';
+import { CiUser } from 'react-icons/ci';
 import { LuUser } from 'react-icons/lu';
 
 export default function LoginIcon() {
@@ -13,14 +14,14 @@ export default function LoginIcon() {
           href={user.isAdmin ? '/admin/dashboard' : "/profile"}
           className="flex items-center gap-2 hover:text-hover_low transition-colors"
         >
-          <LuUser size={30} />
+          <CiUser size={30} />
         </Link>
       ) : (
         <Link
           href={'/login'}
           className="flex items-center gap-2 hover:text-hover_low transition-colors"
         >
-          <AiOutlineUser size={30} />
+          <CiUser size={30} />
           <span>ورود / عضویت </span>
         </Link>
       )}

@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import { useAuthStore } from '@/store/useAuthStore';
+import ProflieLayout from './layout';
 
 export default function Profile() {
   const user = useAuthStore((state) => state.user);
@@ -10,7 +11,5 @@ export default function Profile() {
     loadUser();
   }, [loadUser]);
 
-  return (
-    <div className="container mx-auto py-10">{user?.email ?? 'Loading...'}</div>
-  );
+  return <ProflieLayout>{user?.email}fds</ProflieLayout>;
 }
