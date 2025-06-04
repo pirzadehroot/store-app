@@ -2,16 +2,21 @@ import React from 'react';
 import Image from 'next/image';
 import { ProductDto } from './dto/product.dto';
 import { HiOutlineShoppingCart } from 'react-icons/hi2';
+import { FaPercent } from 'react-icons/fa6';
 
 export default function ProductItem(product: ProductDto) {
   return (
     <div className="relative rounded-2xl p-3 border-2 border-border group transition-colors duration-200 hover:border-red-500 max-sm:grid max-sm:grid-cols-12 max-sm:rounded-lg max-sm:p-2 max-sm:gap-5 max-sm:items-center">
-      {product.discount && (
-        <span className="absolute top-3 right-0 p-0.5 items-center px-2 bg-red-500 text-white rounded-l-lg">
-          {product?.discount}
-          %
-        </span>
+      {product?.discount > 0 && (
+        <div
+          className="absolute flex top-2 right-3 rounded-xl pt-1 px-2 mx-auto bg-red-500 text-white"
+          title={`تخفیف: ${product?.discount}%`}
+        >
+          <FaPercent className="ml-0.5" size={17} />
+          <span>{product?.discount}</span>
+        </div>
       )}
+
       <div className="p-4 max-sm:p-1 max-sm:col-span-4">
         <Image
           className="rounded-lg"

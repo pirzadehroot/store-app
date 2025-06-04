@@ -162,7 +162,7 @@ export default function HomeProducts() {
   };
 
   return (
-    <div className="overflow-hidden relative px-12">
+    <div className="overflow-hidden relative px-6">
       <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="flex">
           {products.map((product, index) => (
@@ -178,13 +178,13 @@ export default function HomeProducts() {
       </div>
 
       <button
-        className="absolute  active:scale-95 top-1/2 right-0 transform -translate-y-1/2 bg-bg_low py-6 p-2 rounded-full border border-border pointer-events-auto"
+        className="absolute  active:scale-95 top-1/2 right-0 transform -translate-y-1/2 bg-bg_low py-3 p-1 rounded-full pointer-events-auto"
         onClick={scrollPrev}
       >
         <HiMiniChevronRight size={20} />
       </button>
       <button
-        className="absolute active:scale-95 top-1/2 left-0 transform -translate-y-1/2 bg-bg_low py-6 p-2 rounded-full border border-border pointer-events-auto"
+        className="absolute active:scale-95 top-1/2 left-0 transform -translate-y-1/2 bg-bg_low py-3 p-1 rounded-full   pointer-events-auto"
         onClick={scrollNext}
       >
         <HiMiniChevronLeft size={20} />

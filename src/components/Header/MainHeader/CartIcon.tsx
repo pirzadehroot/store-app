@@ -1,18 +1,16 @@
 'use client';
 import Link from 'next/link';
-import { CiShoppingCart } from 'react-icons/ci';
+import { RiShoppingCartLine } from 'react-icons/ri';
 
 export default function CartIcon() {
   return (
     <div>
       <Link href={'/cart'} className="relative">
-        <CiShoppingCart
-          size={30}
-          className="hover:text-hover_low transition-colors"
-        />
-        <span className="absolute ext-white -bottom-1 right-4 bg-red-500 text-sm px-1.5 text-white rounded-md border-2 ">
-          1
-        </span>
+        <RiShoppingCartLine size={30} />
+
+        {/* <span className="absolute ext-white -bottom-1 right-4  bg-red-500 text-md px-2  text-white rounded-lg ">
+          ۴
+        </span> */}
       </Link>
     </div>
   );

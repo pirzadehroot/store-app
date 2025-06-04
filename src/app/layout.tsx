@@ -52,7 +52,7 @@ export default function RootLayout({
       </head>
       <body className="font-Vazir bg-bg text-base text-text scroll-smooth antialiased">
         <ClientOnly>
-          <NextTopLoader color="#ef4444" height={3} showSpinner={false} />
+          <NextTopLoader color="#1fb557" height={3} showSpinner={false} />
         </ClientOnly>
 
         <ReactQueryProvider>

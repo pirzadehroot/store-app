@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 import { useAuthStore } from '@/store/useAuthStore';
-import ProflieLayout from './layout';
 
 export default function Profile() {
   const user = useAuthStore((state) => state.user);
@@ -11,5 +10,16 @@ export default function Profile() {
     loadUser();
   }, [loadUser]);
 
-  return <ProflieLayout>{user?.email}fds</ProflieLayout>;
+  return (
+    <>
+      <div className="grid grid-cols-12 gap-10">
+        <div className="col-span-6 bg-bg_low rounded-md p-5">
+          {user?.email}fds
+        </div>
+        <div className="col-span-6 bg-bg_low rounded-md p-5">
+          {user?.email}fds
+        </div>
+      </div>
+    </>
+  );
 }

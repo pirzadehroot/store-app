@@ -15,7 +15,7 @@ export default function ProductDiscount() {
         'https://dkstatics-public.digikala.com/digikala-products/715648.jpg',
       title: 'ماشین فلانی بهمانی 12',
       price: 35523000,
-      discount: 55,
+      discount: 0,
     },
     {
       imageUrl:
@@ -82,7 +82,7 @@ export default function ProductDiscount() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative cursor-pointer">
       <div className="overflow-hidden w-full" ref={emblaRef}>
         <div className="flex ">
           {discountProduct.map((product) => (
@@ -104,22 +104,6 @@ export default function ProductDiscount() {
           ))}
         </div>
       </div>
-
-      <button
-        className="absolute text-low bottom-4 right-4"
-        onClick={onPrevButtonClick}
-        disabled={prevBtnDisabled}
-      >
-        <HiMiniChevronRight size={30} />
-      </button>
-
-      <button
-        className="absolute text-low bottom-4 left-4"
-        onClick={onNextButtonClick}
-        disabled={nextBtnDisabled}
-      >
-        <HiMiniChevronLeft size={30} />
-      </button>
     </div>
   );
 }

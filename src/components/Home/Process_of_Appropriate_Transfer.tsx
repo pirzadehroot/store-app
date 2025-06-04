@@ -35,8 +35,8 @@ export default function Process_of_Appropriate_Transfer() {
     <div className="grid grid-cols-12 justify-between gap-10">
       {data.map((item) => (
         <div
-        className="flex col-span-3 max-lg:col-span-6 max-sm:col-span-12 max-xl:gap-3 gap-10 justify-between items-center border border-border bg-bg_low rounded-xl p-4"
-        key={item.id}
+          className="flex col-span-3 max-lg:col-span-6 max-sm:col-span-12 max-xl:gap-3 gap-10 justify-between items-center shadow-sm bg-bg_low border border-border rounded-xl p-4"
+          key={item.id}
         >
           <span className={'flex-col gap-2'}>
             <h4 className="font-bold">{item.title}</h4>

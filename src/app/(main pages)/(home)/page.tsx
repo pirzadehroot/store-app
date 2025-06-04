@@ -10,13 +10,12 @@ import HomeNewProducts from '../../../components/Home/HomeNewProducts';
 import BanderDown from '../../../components/Home/banders/BanderDown';
 import HomeArticles from '../../../components/Home/HomeArticles';
 import HomeBrands from '../../../components/Home/HomeBrands';
-import HomeVideos from '../../../components/Home/HomeVideos';
 
 export default function Home() {
   return (
     <div className="container mx-auto py-10">
       <section>
-        <div className="grid grid-cols-12 gap-10">
+        <div className="grid grid-cols-12 gap-5">
           <div className="col-span-9 max-lg:col-span-12">
             <MainBander />
           </div>
@@ -73,39 +72,21 @@ export default function Home() {
       </section>
 
       <section className="py-10 ">
-        <div className="grid grid-cols-12 gap-10">
-          <div className="col-span-6  space-y-10">
-            <div className="flex justify-between items-center">
-              <h2 className="font-bold  text-2xl flex gap-2 items-center">
-                <FaSquare size={20} className="text-red-500" />
-                مقالات جدید سایت
-              </h2>
-              <Link
-                href="/blog"
-                className="flex gap-2 items-center text-low text-sm hover:text-red-500 transition-colors"
-              >
-                <span>مشاهده همه</span>
-                <FaAngleLeft size={16} />
-              </Link>
-            </div>
-            <HomeArticles />
+        <div className="col-span-12 space-y-10">
+          <div className="flex justify-between items-center">
+            <h2 className="font-bold  text-2xl flex gap-2 items-center">
+              <FaSquare size={20} className="text-red-500" />
+              مقالات جدید سایت
+            </h2>
+            <Link
+              href="/blog"
+              className="flex gap-2 items-center text-low text-sm hover:text-red-500 transition-colors"
+            >
+              <span>مشاهده همه</span>
+              <FaAngleLeft size={16} />
+            </Link>
           </div>
-          <div className="col-span-6  space-y-10">
-            <div className="flex gap-2 justify-between items-center">
-              <h2 className="font-bold  text-2xl flex gap-2 items-center">
-                <FaSquare size={20} className="text-red-500" />
-                بررسی ویدئویی محصولات
-              </h2>
-              <Link
-                href="/blog"
-                className="flex gap-2 items-center text-low text-sm hover:text-red-500 transition-colors"
-              >
-                <span>مشاهده همه</span>
-                <FaAngleLeft size={16} />
-              </Link>
-            </div>
-            <HomeVideos />
-          </div>
+          <HomeArticles />
         </div>
       </section>
 

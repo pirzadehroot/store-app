@@ -3,7 +3,8 @@ import article_img_1 from '@/assets/images/articles/article (1).jpg';
 import article_img_2 from '@/assets/images/articles/article (2).jpg';
 import article_img_3 from '@/assets/images/articles/article (3).jpg';
 import article_img_4 from '@/assets/images/articles/article (4).jpg';
-import { IoIosTimer } from 'react-icons/io';
+import { IoTimeOutline } from 'react-icons/io5';
+import Link from 'next/link';
 
 const articles = [
   {
@@ -34,28 +35,29 @@ const articles = [
 
 export default function HomeArticles() {
   return (
-    <div className="space-y-5">
+    <div className="grid grid-cols-12 gap-5">
       {articles.map((article) => (
-        <div
+        <Link
+          className="grid col-span-3 bg-bg_low rounded-xl  hover:scale-95 transition-all shadow-lg relative"
           key={article.id}
-          className="flex gap-5 border-2 rounded-xl border-border"
+          href={`/blog/${article.title}`}
         >
           <Image
-            className="rounded-r-xl"
+            className="rounded-t-xl"
             src={article.img}
             alt={'img alt'}
-            width={200}
-            height={100}
+            width={500}
+            height={500}
             priority
           />
-          <div className="p-2 space-y-5">
+          <div className="flex text-center justify-between p-2 border-t-0 space-y-5 border-2 border-border rounded-b-xl">
             <h4>{article.title}</h4>
-            <span className="flex gap-1 items-center">
-              <IoIosTimer />
+            <span className="absolute -top-2 right-3 bg-red-500 text-white rounded-lg p-1 flex gap-1">
+              <IoTimeOutline size={20} />
               {article.datetime}
             </span>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

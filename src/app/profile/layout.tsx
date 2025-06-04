@@ -1,4 +1,5 @@
 import ProfileNavBar from './components/ProfileNavBar';
+import ProfileTopBar from './components/ProfileTopBar';
 
 export default function ProflieLayout({
   children,
@@ -12,9 +13,8 @@ export default function ProflieLayout({
           <ProfileNavBar />
         </div>
         <div className="col-span-9">
-          <div className="bg-bg_low rounded-md border border-border p-5">
-            {children}
-          </div>
+          <ProfileTopBar />
+          {children}
         </div>
       </div>
     </div>

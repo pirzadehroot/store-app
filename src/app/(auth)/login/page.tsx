@@ -1,10 +1,8 @@
 'use client';
 import { useLogin } from '@/hooks/auth/useAuthHooks';
-import { useAuthStore } from '@/store/useAuthStore';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import { HiMiniDevicePhoneMobile } from 'react-icons/hi2';
 import { IoLogInOutline } from 'react-icons/io5';
 import { toast } from 'react-toastify';
 
@@ -27,8 +25,8 @@ export default function Login() {
     mutate(data, {
       onSuccess: () => {
         reset();
-        toast.success('خوش آمدید.');
         router.push('/profile');
+        toast.success('خوش آمدید - درحال انتقال به صفحه پروفایل ... ');
       },
       onError: () => {
         reset();

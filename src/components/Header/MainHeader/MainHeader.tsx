@@ -1,8 +1,8 @@
-import CartIcon from "./CartIcon";
-import LoginIcon from "./LoginIcon";
-import Logo from "./Logo";
-import Search from "./Search";
-import Theme from "./Theme";
+import CartIcon from './CartIcon';
+import LoginIcon from './LoginIcon';
+import Logo from './Logo';
+import Search from './Search';
+import Theme from './Theme';
 
 export default function MainHeader() {
   return (

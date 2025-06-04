@@ -67,7 +67,7 @@ export default function FooterBox() {
 
   return (
     <div className="border rounded-xl bg-bg border-border">
-      <div className="overflow-hidden" ref={emblaRef}>
+      {/* <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {items.map((item) => (
             <div
@@ -92,7 +92,7 @@ export default function FooterBox() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

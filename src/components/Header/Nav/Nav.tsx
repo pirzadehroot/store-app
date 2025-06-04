@@ -16,11 +16,6 @@ export default function Nav() {
     { icon: <FiShoppingBag size={20} />, title: 'فروشگاه', url: '/shop' },
     { icon: <HiOutlineDocumentText size={20} />, title: 'وبلاگ', url: '/blog' },
     {
-      icon: <MdInsertChartOutlined size={20} />,
-      title: 'فروشنده شوید',
-      url: '/become-a-seller',
-    },
-    {
       icon: <IoPeopleOutline size={20} />,
       title: 'درباره ما',
       url: '/about-us',

@@ -58,7 +58,7 @@ export default function AdminNavBar(admin: any) {
           12 پیام جدید
         </span>
       </div>
-      <ul className="space-y-3">
+      <ul className="space-y-7">
         {items.map((item, index) => (
           <li
             className={`rounded-lg p-2  ${

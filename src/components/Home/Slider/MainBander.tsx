@@ -44,7 +44,7 @@ export default function MainBander() {
             <div className="relative min-w-0 flex-[0_0_100%]" key={index}>
               <div className="relative overflow-hidden h-[400px]">
                 <Image
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover rounded-xl"
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover rounded-3xl border-2"
                   src={slide.image}
                   width={2727}
                   height={1200}
@@ -56,6 +56,7 @@ export default function MainBander() {
           ))}
         </div>
       </div>
+
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
         <div className="flex justify-center gap-1">
           {scrollSnaps.map((_, index) => (
@@ -71,16 +72,17 @@ export default function MainBander() {
       </div>
 
       <button
-        className="absolute  active:scale-95 top-1/2 right-4 transform -translate-y-1/2 bg-bg_low p-2 rounded-full shadow-md pointer-events-auto"
+        className="absolute active:scale-95 top-1/2 right-2 transform -translate-y-1/2 bg-bg_low p-0.5 py-3 shadow-md rounded-full pointer-events-auto"
         onClick={scrollPrev}
       >
-        <HiMiniChevronRight />
+        <HiMiniChevronRight size={20} />
       </button>
+
       <button
-        className="absolute  active:scale-95 top-1/2 left-4 transform -translate-y-1/2 bg-bg_low p-2 rounded-full shadow-md pointer-events-auto"
+        className="absolute active:scale-95 top-1/2 left-2 transform -translate-y-1/2 bg-bg_low p-0.5 py-3 shadow-md rounded-full pointer-events-auto"
         onClick={scrollNext}
       >
-        <HiMiniChevronLeft />
+        <HiMiniChevronLeft size={20} />
       </button>
     </div>
   );

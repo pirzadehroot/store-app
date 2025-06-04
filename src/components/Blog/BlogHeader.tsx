@@ -1,44 +1,43 @@
-import Image from "next/image";
-import React from "react";
-import blog_img from "@/../public/images/blog/blog-new-10.jpg";
-import Link from "next/link";
-import { LuGamepad2 } from "react-icons/lu";
+import Image from 'next/image';
+import React from 'react';
+import Link from 'next/link';
+import { LuGamepad2 } from 'react-icons/lu';
 
 export default function BlogHeader() {
   const sidebarLinks = [
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     {
-      href: "/blog",
-      text: "بازی ویدئویی",
+      href: '/blog',
+      text: 'بازی ویدئویی',
       icon: <LuGamepad2 size={25} className="ml-2" />,
     },
     // Add more links here if needed
@@ -46,46 +45,46 @@ export default function BlogHeader() {
 
   const images = [
     {
-      className: "col-span-4",
+      className: 'col-span-4',
       width: 1000,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
     {
-      className: "col-span-4",
+      className: 'col-span-4',
       width: 1000,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
     {
-      className: "col-span-4",
+      className: 'col-span-4',
       width: 1000,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
     {
-      className: "col-span-3",
+      className: 'col-span-3',
       width: 500,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
     {
-      className: "col-span-3",
+      className: 'col-span-3',
       width: 500,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
     {
-      className: "col-span-3",
+      className: 'col-span-3',
       width: 500,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
     {
-      className: "col-span-3",
+      className: 'col-span-3',
       width: 500,
       height: 200,
-      title: "این عنوان مقاله است که ...",
+      title: 'این عنوان مقاله است که ...',
     },
   ];
 
@@ -108,12 +107,14 @@ export default function BlogHeader() {
           {images.map((image, index) => (
             <Link
               key={index}
-              href={"/"}
+              href={'/'}
               className={`rounded-lg relative ${image.className}`}
             >
               <Image
                 className="rounded-lg"
-                src={blog_img}
+                src={
+                  'https://digikala.arvanvod.ir/yPe610dO49/Rv6EpXEQW1/origin_40J5p6njRMh2tdRuhgV27Ns2LbrKJoHovWEZiJAU.mp4'
+                }
                 alt="blog_Images"
                 width={image.width}
                 height={image.height}

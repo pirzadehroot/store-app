@@ -1,11 +1,13 @@
-"use client";
-import React, { useState } from "react";
+'use client';
+import React, { useState } from 'react';
+import { GoSearch } from 'react-icons/go';
+import { LuSearch } from 'react-icons/lu';
 
 function SearchCategorySelector() {
   const [selectedCategory, setSelectedCategory] =
-    useState("همه‌ی دسته‌بندی‌ها");
+    useState('همه‌ی دسته‌بندی‌ها');
 
-  const categories = ["همه‌ی دسته‌بندی‌ها", "سرگرمی", "تکنولوژی", "خانگی"];
+  const categories = ['همه‌ی دسته‌بندی‌ها', 'سرگرمی', 'تکنولوژی', 'خانگی'];
   return (
     <div className="relative w-36">
       <select
@@ -31,12 +33,13 @@ export default function Search() {
   return (
     <div className="mr-10 text-sm">
       <div className="flex items-center">
-        <SearchCategorySelector />
-        <div className="border rounded-xl border-border bg-bg_low p-2.5 pr-6 -mr-5">
+        <div className="flex gap-3 border rounded-md border-border bg-bg_low p-2 ">
+          <LuSearch size={24} className="text-low border-border" />
+          <span className="border border-border rounded-full"></span>
           <input
             type="text"
-            placeholder="جستجو در محصولات و کالاها ..."
-            className="outline-none bg-transparent w-96 max-xl:w-52"
+            placeholder="جستجو در محصولات ..."
+            className="outline-none  bg-transparent w-96"
           />
         </div>
       </div>

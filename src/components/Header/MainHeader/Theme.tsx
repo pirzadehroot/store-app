@@ -1,8 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { BiMoon } from 'react-icons/bi';
-import { CiBrightnessDown, CiDark } from 'react-icons/ci';
-import { FiSun } from 'react-icons/fi';
+import { FaRegMoon } from 'react-icons/fa';
+import { RiSunLine } from 'react-icons/ri';
 
 export default function Theme() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -13,7 +12,7 @@ export default function Theme() {
       ).matches;
       return theme === 'dark' || (!theme && prefersDark);
     }
-    return false; // برای SSR
+    return false;
   });
 
   useEffect(() => {
@@ -26,13 +25,13 @@ export default function Theme() {
   return (
     <div
       onClick={toggleTheme}
-      className="cursor-pointer hover:text-hover_low"
+      className="cursor-pointer"
       aria-label="Toggle dark mode"
     >
       {isDarkMode ? (
-        <CiBrightnessDown className="duration-500 hover:rotate-180" size={30} />
+        <RiSunLine className="duration-500 hover:rotate-180" size={30} />
       ) : (
-        <CiDark className="duration-500 hover:-rotate-12" size={30} />
+        <FaRegMoon className="duration-500 hover:-rotate-45" size={26} />
       )}
     </div>
   );
